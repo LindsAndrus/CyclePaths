@@ -5,7 +5,7 @@
 	margin: auto;
 }
 body{
-	background: url("/images/bike.png");
+	background: url("assets/images/bike.png");
 	background-repeat:no-repeat;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
