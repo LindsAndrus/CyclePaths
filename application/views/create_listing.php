@@ -61,7 +61,7 @@
       Description: <input type='text' name='description' class="form-control"></input>      
     </div>
     <div>
-      Price: <input type='text' name='text' class="form-control"></input>      
+      Price: <input type='number' name='price' step="0.01" class="form-control"></input>      
     </div>
     
      <div>
