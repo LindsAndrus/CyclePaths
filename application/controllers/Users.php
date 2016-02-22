@@ -8,9 +8,13 @@ class Users extends CI_Controller {
 	}
 
 	public function create() {
+		$this->load->model('User');
 		$data = $this->input->post();
 		if(!$this->User->validate($data)) {
 			//set errors
+			$errors = array(validation_errors()); 
+			$this->session->set_flashdata('registration_errors', $errors);
+			redirect("/login");
 		} else {
 			//add the user
 		}

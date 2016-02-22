@@ -15,7 +15,10 @@
 
 	<div class="register">	
     <h3>Register Here!</h3>
-		<form action="create" method="post">
+    	<?php if($this->session->flashdata('registration_errors')[0]) : ?>
+    		<div class="error"><?= $this->session->flashdata('registration_errors')[0]?></div>
+		<?php endif?>
+		<form action="users/create" method="post">
 			<h4>Name</h4><input type="text" name="name">
 			<h4>Username</h4><input type="text" name="username">
 			<h4>Email</h4><input type="text" name="email">
