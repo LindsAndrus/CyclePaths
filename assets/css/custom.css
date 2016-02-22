@@ -25,3 +25,23 @@
     margin: 5px 0 100px 80px;
     padding: 0 0 50px 120px;
 }
+.header{
+    margin: auto;
+    width: 0 auto;
+    height: 100px;
+    display: inline-block;
+    padding-top: 20px;
+    background color: white;
+}
+.logo{
+    display: inline-block;
+}
+.links{
+    padding-top: 20px;
+    display: inline-block;
+    float: right;
+}
+a{
+    border-right: 1px solid silver;
+    padding-right: 5px;
+}
