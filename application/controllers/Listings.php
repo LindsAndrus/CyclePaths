@@ -5,6 +5,7 @@ class Listings extends CI_Controller {
 
 	public function ()
 	{
-		$this->load->view('home');
+		
+		$this->load->view('listings');
 	}
 }
