@@ -16,7 +16,7 @@ class User extends CI_Model {
 		return $this->db->query($query, $values)->row_array();
 	}
 	function get_user_by_id($id) {
-		$query = "SELECT first_name, password, email FROM users WHERE id = ?";
+		$query = "SELECT * FROM users WHERE id = ?";
 		$values = array($id);
 		return $this->db->query($query, $values)->row_array();
 	}

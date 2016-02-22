@@ -50,8 +50,36 @@ class Users extends CI_Controller {
 	public function show($id){
 		$this->load->model('User');
 		$user = $this->User->get_user_by_id($id);
+		//get active listings
+		//get inactive listings
 		$this->load->view('users/show', array('user' => $user));
 
+	}
+	public function edit($id){
+		$this->load->model('User');
+		$user = $this->User->get_user_by_id($id);
+		$user['id'] = $id;
+		var_dump($user);
+		die();
+		// $this->load->view('users/edit', array('user' => $user));
+	}
+
+	public function update() {
+		$this->load->model('User');
+		$data = $this->input->post();
+		if(!$this->User->validate($data)) {
+			//set errors
+			$errors = array(validation_errors()); 
+			$this->session->set_flashdata('update_errors', $errors);
+			redirect("/login");
+		} else {
+			//edit the user
+			$data['password'] = password_hash($data['password'], PASSWORD_BCRYPT);
+			$data += array('user_id'=>$this->session->userdata('user_id'));
+			$this->User->update_user($data);
+			#redirect to home page
+			redirect('/');
+		}
 	}
 
 	public function login_reg_page(){
