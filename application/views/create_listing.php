@@ -24,20 +24,44 @@
     <div class="col-md-5">
   	<h3>Create A Listing Here!</h3>
 
-  <form action='/users/create' method='post' class="well">
+  <form action='/listings/create_item' method='post' class="well">
     
     <div>
       Name: <input type='text' name='name' class="form-control"></input>      
     </div>
     <div>
-      Category: <input type='text' name='alias' class="form-control"></input>      
+      Category: <select type='select' name='category' class="form-control">
+        <option value="wheels">Wheels</option>
+        <option value="brakes">Brakes</option>
+        <option value="shifters/derailleurs">Shifters/Derailleurs</option>
+        <option value="handbars/grips">Handbars/Grips</option>
+        <option value="pedals/cleats">Pedals/Cleats</option>
+        <option value="cranksets/chainrings/chainsets">Cranksets/Chainrings/Chainsets</option>
+        <option value="chains/cassettes">Chains/Cassettes</option>
+        <option value="saddles/seats/seatposts">Saddles/Seats/Seatposts</option>
+      </select>      
     </div>
    
     <div>
-      Brand: <input type='email' name='email' class="form-control"></input>      
+      Brand: <select type='select' name='brand' class="form-control">
+        <option value="cannondale">Cannondale</option>
+        <option value="giant">Giant</option>
+        <option value="gt">GT</option>
+        <option value="kona">Kona</option>
+        <option value="marin">Marin</option>
+        <option value="merida">Merida</option>
+        <option value="santa cruz bicycles">Santa Cruz Bicycles</option>
+        <option value="scott">Scott</option>
+        <option value="specialized">Specialized</option>
+        <option value="trek">Trek</option>
+        <option value="other">Other</option>
+      </select>       
     </div>
     <div>
-      Price: <input type='password' name='password' class="form-control"></input>      
+      Description: <input type='text' name='description' class="form-control"></input>      
+    </div>
+    <div>
+      Price: <input type='text' name='text' class="form-control"></input>      
     </div>
     
      <div>
