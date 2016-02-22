@@ -13,7 +13,7 @@
 
 	<div class="register">	
     <h3>Register Here!</h3>
-		<form action="register" method="post">
+		<form action="create" method="post">
 			<h4>Name</h4><input type="text" name="name">
 			<h4>Username</h4><input type="text" name="username">
 			<h4>Email</h4><input type="text" name="email">
