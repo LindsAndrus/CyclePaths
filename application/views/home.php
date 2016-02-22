@@ -9,11 +9,13 @@
 		margin: auto;
 	}
 	.searchcontainer{
-		margin: auto;
-		height: 450px;
-		background: url("/images/bike.png");
-		background-repeat: no-repeat;
-		background-attachment: fixed;
+		background: url("assets/images/bike.png");
+		background-repeat:no-repeat;
+		-webkit-background-size:cover;
+		-moz-background-size:cover;
+		-o-background-size:cover;
+		background-size:cover;
+		background-position:center;
 	}
 	.search{
 		width: 400px;
