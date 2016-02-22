@@ -19,8 +19,8 @@
     		<div class="error"><?= $this->session->flashdata('registration_errors')[0]?></div>
 		<?php endif?>
 		<form action="users/create" method="post">
-			<h4>Name</h4><input type="text" name="name">
-			<h4>Username</h4><input type="text" name="username">
+			<h4>First Name</h4><input type="text" name="fname">
+			<h4>Last Name</h4><input type="text" name="lname">
 			<h4>Email</h4><input type="text" name="email">
 			<h4>Password</h4><input type="password" name="password">
 			<h4>Confirm Password</h4><input type="password" name="confirm_password">
@@ -31,8 +31,11 @@
 
 	<div class="login">	
     <h3>Login Here!</h3>
-		<form action="login" method="post">
-			<h4>Username</h4><input type="text" name="username">
+    	<?php if($this->session->flashdata('login_errors')) : ?>
+    		<div class="error"><?= $this->session->flashdata('login_errors')?></div>
+		<?php endif?>
+		<form action="users/signin" method="post">
+			<h4>Email</h4><input type="text" name="email">
 			<h4>Password</h4><input type="password" name="password">
 			<br>
 			<input type="submit" value="Login" class="btn btn-primary">
