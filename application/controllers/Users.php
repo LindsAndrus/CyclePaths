@@ -17,6 +17,15 @@ class Users extends CI_Controller {
 			redirect("/login");
 		} else {
 			//add the user
+			$data['password'] = password_hash($data['password'], PASSWORD_BCRYPT);
+			$id = $this->User->create_user($data);
+			$user array(
+				'user_id' => $id,
+				'is_logged_in' => true
+			);
+			$this->session->set_userdata($user);
+			#redirect to home page
+			redirect('/');
 		}
 	}
 
