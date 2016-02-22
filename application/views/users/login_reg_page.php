@@ -18,6 +18,7 @@
 			<h4>Username</h4><input type="text" name="username">
 			<h4>Email</h4><input type="text" name="email">
 			<h4>Password</h4><input type="password" name="password">
+			<h4>Confirm Password</h4><input type="password" name="confirm_password">
 			<br>
 			<input type="submit" value="Create Account" class="btn btn-primary">
 		</form>
