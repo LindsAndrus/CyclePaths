@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="logo">
-		<img src="assets/images/logo.png" height="60px" width="250px"></img>
+		<img src="/assets/images/logo.png" height="60px" width="250px"></img>
 	</div>
 	<div class="links">
 		<a href="">LOGIN/REGISTRATION</a>
