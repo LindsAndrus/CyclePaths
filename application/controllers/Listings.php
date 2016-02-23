@@ -27,11 +27,11 @@ class Listings extends CI_Controller {
 			$this->input->post('price')
 		);
 
-		redirect('item_page');
+		redirect('/');
 	}
 
 	public function search_results()
 	{
-
+		
 	}
 }
