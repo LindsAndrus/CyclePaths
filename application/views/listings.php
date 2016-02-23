@@ -15,16 +15,29 @@
 
 <h1 class="page-header">CyclePath</h1>
 
-<h3>Your Results Here!</h3>
-
+<h3>Your Search returned <?= count($cat_results) ?>!</h3>
+<!-- 
   <div class="row">
-    <div class="col-md-5">
-	<div name="listings">
-		<div name="result">Result 1</div>
-		<div name="result">Result 2</div>
-		<div name="result">Result 3</div>
-	</div>
-</div>
+    <div class="col-md-5"> -->
+    <form>
+      <th>Image</th>
+      <th>Item</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Brand</th>
+      <th>Seller</th>
+      <?php foreach ($cat_results as $list_item) {?>
+        <tr>
+          <td>this is an image</td>
+    		  <td><?= $list_item['name'] ?></td>
+          <td><?= $list_item['description'] ?></td>
+          <td><?= $list_item['price'] ?></td>
+          <td><?= $list_item['brand_name'] ?></td>
+          <td><?= $list_item['email'] ?></td>  
+        </tr>
+      <?php } ?>
+    </form>
+<!-- </div> -->
 
 </body>
 </html>

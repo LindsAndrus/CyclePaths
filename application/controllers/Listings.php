@@ -35,8 +35,14 @@ class Listings extends CI_Controller {
 		redirect('/');
 	}
 
-	public function search_results()
+	public function search_results($id)
 	{
+		$this->load->model('listing');
+		$search_results = $this->listing->category_values($id);
+
+		// var_dump(array('listings' => $search_results));
+		// die();
 		
+		$this->load->view('listings', array('cat_results' => $search_results));
 	}
 }

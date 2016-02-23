@@ -10,6 +10,12 @@ class Listing extends CI_Model {
 		return $this->db->query($query)->result_array();
 	}
 
+	public function category_values($id)
+	{
+		$query = "SELECT items.name, items.description, items.price, brands.name AS brand_name, users.email FROM items JOIN users ON items.seller_id = users.id JOIN items_has_brands ON items_has_brands.items_id = items.id JOIN brands ON brands.id = items_has_brands.brands_id WHERE items.categories_id = {$id}";
+		return $this->db->query($query)->result_array();
+	}
+
 	public function create_item($name, $category, $brand, $description, $price, $id)
 	{
 
