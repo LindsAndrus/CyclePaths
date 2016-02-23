@@ -18,10 +18,14 @@ class Listing extends CI_Model {
 		$brandquery = "SELECT id FROM brands WHERE name = ?";
 		$brand_id = $this->db->query($brandquery, $brand)->row_array();
 
-		$query2 = "INSERT INTO items(name, description, price, brand_id, created_on, updated_on, categories_id) 
-			VALUES (?, ?, ?, {$brand_id['id']}, NOW(), NOW(), {$cat_id['id']})";
+		$query = "INSERT INTO items(name, description, price, created_on, updated_on, categories_id) 
+			VALUES (?, ?, ?, NOW(), NOW(), {$cat_id['id']})";
 
-		$this->db->query($query2, array('name' => $name, 'description' => $description, 'price' => $price));
+		$this->db->query($query, array('name' => $name, 'description' => $description, 'price' => $price));
+
+		$item_id = $this->db->insert_id();
+		$query2 = "INSERT INTO items_has_brands (items_id, brands_id) VALUES ({$item_id}, {$brand_id['id']})";
+		$this->db->query($query2);
 	}
 
 
