@@ -11,7 +11,12 @@ class Listings extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('homeii');
+		$this->load->model('listing');
+		$matches = $this->listing->search_results();
+		// var_dump($results);
+		// die();
+
+		$this->load->view('homeii', array('matches' => $matches));
 
 	}
 
@@ -32,6 +37,6 @@ class Listings extends CI_Controller {
 
 	public function search_results()
 	{
-
+		
 	}
 }

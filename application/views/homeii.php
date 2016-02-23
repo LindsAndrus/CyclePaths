@@ -66,75 +66,21 @@
 	<?php $this->load->view('header') ?>
 	
 <div class="container">
-<div id="accordion">
-  <h3>Know what you want?</h3>
-  <div>
-    <p>
-    Search below!!!
-    </p>
-  </div>
+  <div id="accordion">
+    <h3>Know what you want?</h3>
+    <div>
+      <p>
+      Search below!!!
+      </p>
+    </div>
 
-
-  <h3>Wheels</h3>
-  <div>
-    <p>
-    The thing that turns!
-    </p>
+    <?php foreach ($matches as $match) { ?> 
+    <h3><?= $match['name'] ?></h3>
+    <a href="listings/search_results/<?= $match['id'] ?>"
+    <p><?= $match['description']  ?></p>
+    </a>
+    <?php } ?>
   </div>
-  <h3>Brakes</h3>
-  <div>
-    <p>
-    Things to stop your bike.
-    </p>
-  </div>
-  <h3>Shifters/Derailleurs</h3>
-  <div>
-    <p>
-    Things that shift and derail.
-    </p>
-    <ul>
-      <li>Sub 1</li>
-      <li>Sub 2</li>
-      <li>Sub 3</li>
-    </ul>
-  </div>
-  <h3>Handlebars/Grips</h3>
-  <div>
-    <p>
-    Things to hang onto.
-    </p>
-  </div>
-
-  <h3>Pedals/Cleats</h3>
-  <div>
-    <p>
-    Things to pedal with.
-    </p>
-  </div>
-
-  <h3>Cranksets/Chainrings/Chainsets</h3>
-  <div>
-    <p>
-    Things to crank with.
-    </p>
-  </div>
-
-  <h3>Chains/Cassettes</h3>
-  <div>
-    <p>
-    <a href = "listings/search_results/$1">Things like chains.</a>
-    </p>
-  </div>
-
-  <h3>Saddles/Seats/Seatposts</h3>
-  <div>
-    <p>
-    Things to sit on.
-    </p>
-  </div>
-
-</div>
-
 </div>
  
 </body>

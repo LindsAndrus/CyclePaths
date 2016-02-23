@@ -5,7 +5,9 @@ class Listing extends CI_Model {
 
 	public function search_results()
 	{
+		$query = "SELECT id, name, description FROM categories";
 
+		return $this->db->query($query)->result_array();
 	}
 
 	public function create_item($name, $category, $brand, $description, $price, $id)
