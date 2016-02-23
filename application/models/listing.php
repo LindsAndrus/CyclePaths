@@ -10,7 +10,7 @@ class Listing extends CI_Model {
 
 	public function create_item($name, $category, $brand, $description, $price)
 	{
-		
+
 		$cat = "SELECT id FROM categories WHERE name = ?";
 
 		$cat_id = $this->db->query($cat, array($category))->row_array();
@@ -18,8 +18,13 @@ class Listing extends CI_Model {
 		$brandquery = "SELECT id FROM brands WHERE name = ?";
 		$brand_id = $this->db->query($brandquery, $brand)->row_array();
 
-		$query = "INSERT INTO items(name, description, price, created_on, updated_on, categories_id) 
-			VALUES (?, ?, ?, NOW(), NOW(), {$cat_id['id']})";
+		$user_data = $this->session->userdata($user);
+
+		//Last line inserts user ID that created the posting
+
+
+		$query = "INSERT INTO items(name, description, price, created_on, updated_on, categories_id, seller_id) 
+			VALUES (?, ?, ?, NOW(), NOW(), {$cat_id['id']}, $user_data)";
 
 		$this->db->query($query, array('name' => $name, 'description' => $description, 'price' => $price));
 
@@ -28,6 +33,10 @@ class Listing extends CI_Model {
 		$this->db->query($query2);
 	}
 
-
+	public function active_listings()
+	{
+		
+	}
 	
+
 }

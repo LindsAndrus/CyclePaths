@@ -32,6 +32,6 @@ class Listings extends CI_Controller {
 
 	public function search_results()
 	{
-
+		
 	}
 }
