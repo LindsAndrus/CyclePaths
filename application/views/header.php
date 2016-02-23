@@ -8,6 +8,7 @@
 		display: inline-block;
 	}
 	.container{
+		margin-top: 10px;
 		width: 900px;
 	}
 </style>

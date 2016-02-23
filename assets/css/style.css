@@ -1,9 +1,9 @@
+/*GENERAL STYLING FOR ALL PAGES*/
+
 .container{
 	margin: auto;
 }
-.header{
-	margin: auto;
-}
+
 body{
 	background: url("assets/images/bike.png");
 	background-repeat:no-repeat;
@@ -13,22 +13,41 @@ body{
 	background-size:cover;
 	background-position:center;
 }
-.container{
+
+/* CREATE_LISTING */
+#createcontainer{
+	margin-top: 20px;
+	width: 600px;
+	float: left;
+	margin-left: 180px;
+}
+
+#upload_image{
+	margin: 10px 0 10px 0;
+}
+
+
+
+/* DASHBOARD */
+
+/*.header{
+	margin: auto;
+}*/
+/*.container{
 	margin: auto;
 	height: 450px;
-	}
+	}*/
 
-.portrait{
+/*.portrait{
 	display: inline-block;
 	vertical-align: top;
 	margin: 20px 20px 0 90px;
-}
-.pastsales{
+}*/
+/*.pastsales{
 	display: inline-block;
 	width: 600px;
-}
-.activesales{
+}*/
+/*.activesales{
 	margin: 30px 0 0 100px;
 	width: 770px;
-
-}
+}*/
