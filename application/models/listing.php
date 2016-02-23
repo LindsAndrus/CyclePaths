@@ -12,7 +12,7 @@ class Listing extends CI_Model {
 
 	public function category_values($id)
 	{
-		$query = "SELECT items.name, items.description, items.price, brands.name AS brand_name, users.email FROM items JOIN users ON items.seller_id = users.id JOIN items_has_brands ON items_has_brands.items_id = items.id JOIN brands ON brands.id = items_has_brands.brands_id WHERE items.categories_id = {$id}";
+		$query = "SELECT items.id, items.name, items.description, items.price, brands.name AS brand_name, users.email FROM items JOIN users ON items.seller_id = users.id JOIN items_has_brands ON items_has_brands.items_id = items.id JOIN brands ON brands.id = items_has_brands.brands_id WHERE items.categories_id = {$id}";
 		return $this->db->query($query)->result_array();
 	}
 
@@ -40,9 +40,11 @@ class Listing extends CI_Model {
 		$this->db->query($query2);
 	}
 
-	public function active_listings()
+	public function display_item($num)
 	{
-		
+		$query = "SELECT items.id, items.name, items.description, items.price, categories.name AS category, brands.name AS brand_name, users.email FROM items JOIN users ON items.seller_id = users.id JOIN categories ON categories.id = items.categories_id JOIN items_has_brands ON items_has_brands.items_id = items.id JOIN brands ON brands.id = items_has_brands.brands_id WHERE items.id = {$num}";
+
+		return $this->db->query($query)->result_array();
 	}
 	
 

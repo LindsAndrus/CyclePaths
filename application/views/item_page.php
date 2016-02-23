@@ -21,15 +21,22 @@
 
   <div class="row">
     <div class="col-md-5">
-	<textarea readonly="/items">(Category, Brand, Description, Price listed here.
-	<a href="/contact seller">Contact Seller</a>
-	</textarea>
 
     </div>
 </div>
 
-
-
-
+<div>
+  <?php foreach ($ind_item as $results) {?>
+    <p>THIS IS THE IMAGE</p>
+    <h2><?= $results['name'] ?></h2>
+    <p>
+      <?= $results['brand_name'] ?><br>
+      <?= $results['description'] ?><br>
+      <?= $results['price'] ?><br>
+      <?= $results['category'] ?><br>
+      <a href="mailto:<?= $results['email'] ?>?Subject=Interested%20in%20listing" target="_top">Contact Seller</a>
+    </p>
+  <?php } ?>
+</div>
 </body>
 </html>

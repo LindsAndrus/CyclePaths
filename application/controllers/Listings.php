@@ -40,9 +40,14 @@ class Listings extends CI_Controller {
 		$this->load->model('listing');
 		$search_results = $this->listing->category_values($id);
 
-		// var_dump(array('listings' => $search_results));
-		// die();
-		
 		$this->load->view('listings', array('cat_results' => $search_results));
+	}
+
+	public function item_page($num)
+	{
+		$this->load->model('listing');
+		$results = $this->listing->display_item($num);
+
+		$this->load->view('item_page',array('ind_item' => $results));
 	}
 }

@@ -28,7 +28,7 @@
       <th>Seller</th>
       <?php foreach ($cat_results as $list_item) {?>
         <tr>
-          <td>this is an image</td>
+          <td><a href="/item_page/<?= $list_item['id'] ?>">image</a></td>
     		  <td><?= $list_item['name'] ?></td>
           <td><?= $list_item['description'] ?></td>
           <td><?= $list_item['price'] ?></td>
