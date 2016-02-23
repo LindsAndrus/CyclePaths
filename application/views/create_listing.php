@@ -9,13 +9,7 @@
 
 </head>     
 <body>  
-<ul class="nav nav-tabs">
-<li role="presentation"><a href="#">HOME</a></li>
-  <li role="presentation" class="active"><a href="#">CREATE A LISTING</a></li>
-  <li role="presentation"><a href="#">LOGOUT</a></li>
-  <li role="presentation"><a href="#">ABOUT US</a></li>
-  <li role="presentation"><a href="#">CONTACT US</a></li>
-</ul>
+<?php $this->load->view('header.php') ?>
 
 <h1 class="page-header">CyclePath</h1>
 

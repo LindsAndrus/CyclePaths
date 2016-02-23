@@ -17,7 +17,11 @@
 		<img src="/assets/images/logo.png" height="60px" width="250px"></img>
 	</div>
 	<div class="links">
-		<a href="">LOGIN/REGISTRATION</a>
+		<?php if($this->session->userdata('user_id')) : ?>
+			<a href="/logout">LOGOUT</a>
+		 <?php else : ?>
+		 	<a href="/login">LOGIN/REGISTRATION</a>
+		 <?php endif ?>
 		<a href="">ABOUT</a>
 		<a href="">CONTACT US</a>
 	</div>

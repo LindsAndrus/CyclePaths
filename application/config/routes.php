@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+$route['logout'] = 'Users/logout';
 $route['login'] = 'Users/login_reg_page';
 $route['/user/show/(:num)'] = 'User/show/$1';
 $route['/user/edit/(:num)'] = 'User/edit/$1';
