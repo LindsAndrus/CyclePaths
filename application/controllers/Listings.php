@@ -11,7 +11,7 @@ class Listings extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('create_listing');
+		$this->load->view('homeii');
 
 	}
 
@@ -32,6 +32,6 @@ class Listings extends CI_Controller {
 
 	public function search_results()
 	{
-		
+
 	}
 }
