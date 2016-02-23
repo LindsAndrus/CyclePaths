@@ -80,13 +80,13 @@ class Users extends CI_Controller {
 			} else {
 				//edit the user
 				if (password_verify($data['password'], $user['password'])) {
-					$data += array('user_id' => $this->session->userdata('user_id'));
-					$this->User->update_user($data);
-					#redirect to home page
-					redirect("/users/show/" . $this->session->userdata('user_id'));
+						$data += array('user_id' => $this->session->userdata('user_id'));
+						$this->User->update_user($data);
+						#redirect to home page
+						redirect("/users/show/" . $this->session->userdata('user_id'));
 				} else {
 					//set errors
-					$this->session->set_flashdata('edit_errors', "Invalid password!");
+					$this->session->set_flashdata('edit_errors', array("Invalid password!"));
 					redirect("/users/edit/" . $this->session->userdata('user_id'));
 				}
 			}
