@@ -101,28 +101,39 @@ class Users extends CI_Controller {
 		redirect("/");
 	}
 
-	function do_upload()
-	{
-		$config['upload_path'] = './assets/images/users';
-		$config['allowed_types'] = 'gif|jpg|png';
-
-		$this->load->library('upload', $config);
-
-		if ( ! $this->upload->do_upload())
-		{
-			$error = array('error' => $this->upload->display_errors());
-
-			$this->load->view('users/edit/'.$this->session->userdata('user_id'), $error);
+	function do_upload() {
+		//create the users folder if it doesn't exist
+		$path = './assets/images/users/'.$this->session->userdata('user_id')."/";
+		if(!is_dir($path)) { //create the folder if it's not already exists
+			mkdir($path,0755,TRUE);
 		}
-		else
-		{
-			$data = array('upload_data' => $this->upload->data());
+		//set the path, define what file types we will allow, and the name of the file
+		$config['upload_path'] = $path;
+		$config['allowed_types'] = 'gif|jpg|jpeg|png';
+		$config['file_name'] = 'profile_picture';
+		$config['overwrite'] = true;
+		$this->load->library('upload', $config);
+		if (!$this->upload->do_upload()) {
+			$error = array('error' => $this->upload->display_errors());
+			//redirect
+		} else {
+			//create the image in the db:
+			//remove the initial ./ from the path
+			$path = substr($path, 1);
+			$path .= $this->upload->data()['file_name'];
+			$this->load->model('Image');
+			$image_id = $this->Image->create_image($path);
+			//update the user image_id to update to the new image tag
+			$this->load->model('User');
+			$data = array('user_id' => $this->session->userdata('user_id'), 'image_id' => $image_id);
+			$this->User->change_image($data);
+			//redirect to show page
+			redirect('users/show/'.$this->session->userdata('user_id'));
 
-			$this->load->view('upload_success', $data);
 		}
 	}
 
-	public function change_profile_picture() {
+	public function change_profile_image() {
 		if($this->session->userdata('is_logged_in')) {
 			$this->load->view('/users/profile_picture_page');
 		} else {

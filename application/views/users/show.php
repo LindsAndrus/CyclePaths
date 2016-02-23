@@ -16,11 +16,13 @@
 <div class="container">
 	<div class="user_info">
 		<div class="portrait">
-    		<img src="/assets/images/portrait.png" width="150px" height "280px">
+    		<img src="<?=$user['link']?>" width="150px" height "280px">
   		</div>
   		<?= $user['first_name'] ?>
   		<?= $user['last_name'] ?>
   		<?= $user['email'] ?>
+
+        <a href="/users/change_profile_image">Change your Profile Image</a>
 	</div>
 
 

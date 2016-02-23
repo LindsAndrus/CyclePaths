@@ -23,9 +23,16 @@ class User extends CI_Model {
 		return $this->db->query($query, $values)->row_array();
 	}
 	function get_user_by_id($id) {
-		$query = "SELECT * FROM users WHERE id = ?";
+		$query = "SELECT * FROM users JOIN images ON images.id = users.image_id WHERE users.id = ?";
 		$values = array($id);
 		return $this->db->query($query, $values)->row_array();
+	}
+
+	function change_image($data) {
+
+		$query = "UPDATE users SET image_id = ? WHERE id = ?";
+		$values = array($data['image_id'], $data['user_id']);
+		$this->db->query($query, $values);
 	}
 
 	public function validate($data) {

@@ -15,13 +15,13 @@
 
 <div class="container">
     <div class="edit">
-        <h3>Edit Here!</h3>
+        <h3>Choose your Profile Picture!</h3>
         <?php if($this->session->flashdata('edit_errors')[0]) : ?>
             <div class="error"><?= $this->session->flashdata('edit_errors')[0]?></div>
         <?php endif?>
         <?php echo form_open_multipart('users/do_upload');?>
 
-        <input type="file" name="userfile" size="20" />
+        <input type="file" name="userfile" />
 
         <br /><br />
 
