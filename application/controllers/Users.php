@@ -9,15 +9,14 @@ class Users extends CI_Controller {
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
 		$user = $this->User->get_user_by_email($email);
-		
 		if(password_verify($password, $user['password'])) {
-			$user = array(
+			$user_data = array(
 				'user_id' => $user['id'],
 				'is_logged_in' => true
 			);
-			$this->session->set_userdata($user);
+			$this->session->set_userdata($user_data);
 			#redirect to home page
-			redirect('/');
+			redirect('/user/show/'.$user['id']);
 		} else {
 			//set errors
 			$this->session->set_flashdata('login_errors', "Invalid email or password!");
@@ -43,7 +42,7 @@ class Users extends CI_Controller {
 			);
 			$this->session->set_userdata($user);
 			#redirect to home page
-			redirect('/');
+			redirect('/user/show/'.$id);
 		}
 	}
 
