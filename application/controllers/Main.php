@@ -5,6 +5,6 @@ class Main extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('create_listing');
+		$this->load->view('item_page');
 	}
 }

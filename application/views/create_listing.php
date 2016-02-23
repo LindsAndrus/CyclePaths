@@ -5,14 +5,27 @@
   <title>Create a Listing</title>
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  
+
+  <style type="text/css">
+    #create_container{
+      background: url("assets/images/bike.png");
+      background-repeat:no-repeat;
+      -webkit-background-size:cover;
+      -moz-background-size:cover;
+      -o-background-size:cover;
+      background-size:cover;
+      background-position:center;
+    }
+  </style>
+
 </head>     
 <body>  
 <?php $this->load->view('header.php') ?>
 
-<div class="container" id="createcontainer">
+<div class="container" id="create_container">
   <!-- <div class="row">
     <div class="col-md-5"> -->
+  <div id="search_inputs">
 	<h3>Create A Listing Here!</h3>
 
   <form action='/listings/create_item' method='post' class="well">
@@ -68,7 +81,7 @@
     </input>
 
 	</form>
-
+  </div>
 </div>
 
 </body>
