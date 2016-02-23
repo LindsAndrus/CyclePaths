@@ -16,7 +16,7 @@ class Users extends CI_Controller {
 			);
 			$this->session->set_userdata($user_data);
 			#redirect to home page
-			redirect('/user/show/'.$user['id']);
+			redirect('/users/show/'.$user['id']);
 		} else {
 			//set errors
 			$this->session->set_flashdata('login_errors', "Invalid email or password!");
@@ -42,7 +42,7 @@ class Users extends CI_Controller {
 			);
 			$this->session->set_userdata($user);
 			#redirect to home page
-			redirect('/user/show/'.$id);
+			redirect('/users/show/'.$id);
 		}
 	}
 
@@ -96,6 +96,35 @@ class Users extends CI_Controller {
 	public function logout() {
 		$this->session->sess_destroy();
 		redirect("/");
+	}
+
+	function do_upload()
+	{
+		$config['upload_path'] = './assets/images/users';
+		$config['allowed_types'] = 'gif|jpg|png';
+
+		$this->load->library('upload', $config);
+
+		if ( ! $this->upload->do_upload())
+		{
+			$error = array('error' => $this->upload->display_errors());
+
+			$this->load->view('users/edit/'.$this->session->userdata('user_id'), $error);
+		}
+		else
+		{
+			$data = array('upload_data' => $this->upload->data());
+
+			$this->load->view('upload_success', $data);
+		}
+	}
+
+	public function change_profile_picture() {
+		if($this->session->userdata('is_logged_in')) {
+			$this->load->view('/users/profile_picture_page');
+		} else {
+			show_404();
+		}
 	}
 
 	public function login_reg_page(){
