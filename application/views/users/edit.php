@@ -19,13 +19,12 @@
     	<?php if($this->session->flashdata('edit_errors')[0]) : ?>
     		<div class="error"><?= $this->session->flashdata('edit_errors')[0]?></div>
 		<?php endif?>
-		<form action="users/update" method="post">
-			<h4>First Name</h4><input value="<?=$user['first_name']?>" type="text" name="fname">
-			<h4>Last Name</h4><input value="<?=$user['last_name']?>" type="text" name="lname">
+		<form action="/users/update" method="post">
+			<h4>First Name</h4><input value="<?=$user['first_name']?>" type="text" name="first_name">
+			<h4>Last Name</h4><input value="<?=$user['last_name']?>" type="text" name="last_name">
 			<h4>Email</h4><input value="<?=$user['email']?>" type="text" name="email">
 			<h4>Password</h4><input type="password" name="password">
-			<h4>Confirm Password</h4><input type="password" name="confirm_password">
-			<input type="hidden" name="id" value="<?=user['user_id']?>">
+			<input type="hidden" name="id" value="<?= $user['id']?>">
 			<br>
 			<input type="submit" value="Edit Account" class="btn btn-primary">
 		</form>

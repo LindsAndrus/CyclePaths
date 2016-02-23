@@ -19,8 +19,8 @@
     		<div class="error"><?= $this->session->flashdata('registration_errors')[0]?></div>
 		<?php endif?>
 		<form action="/users/create" method="post">
-			<h4>First Name</h4><input type="text" name="fname">
-			<h4>Last Name</h4><input type="text" name="lname">
+			<h4>First Name</h4><input type="text" name="first_name">
+			<h4>Last Name</h4><input type="text" name="last_name">
 			<h4>Email</h4><input type="text" name="email">
 			<h4>Password</h4><input type="password" name="password">
 			<h4>Confirm Password</h4><input type="password" name="confirm_password">

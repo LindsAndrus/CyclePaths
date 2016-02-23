@@ -18,9 +18,9 @@
 		<div class="portrait">
     		<img src="/assets/images/portrait.png" width="150px" height "280px">
   		</div>
-  		User First Name
-  		User Last Name
-  		User Email
+  		<?= $user['first_name'] ?>
+  		<?= $user['last_name'] ?>
+  		<?= $user['email'] ?>
 	</div>
 
 
