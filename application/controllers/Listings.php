@@ -20,6 +20,16 @@ class Listings extends CI_Controller {
 
 	}
 
+	public function about()
+	{
+		$this->load->view('about');
+	}
+
+	public function contact()
+	{
+		$this->load->view('contactus');
+	}
+
 	public function create_item()
 	{
 		$this->load->model('listing');

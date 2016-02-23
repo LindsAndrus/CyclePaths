@@ -23,7 +23,7 @@
 		 <?php else : ?>
 		 	<a href="/login">LOGIN/REGISTRATION</a>
 		 <?php endif ?>
-		<a href="">ABOUT</a>
-		<a href="">CONTACT US</a>
+		<a href="/about">ABOUT</a>
+		<a href="/contact">CONTACT US</a>
 	</div>
 </div>
