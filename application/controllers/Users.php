@@ -16,7 +16,10 @@ class Users extends CI_Controller {
 			);
 			$this->session->set_userdata($user_data);
 			#redirect to home page
-			redirect('/users/show/'.$user['id']);
+			// redirect('/users/show/'.$user['id']);
+
+			redirect ('/users_listings/'.$user['id']);
+
 		} else {
 			//set errors
 			$this->session->set_flashdata('login_errors', "Invalid email or password!");
@@ -131,5 +134,12 @@ class Users extends CI_Controller {
 		$this->load->view('users/login_reg_page');
 	}
 
+	public function users_listings($id)
+	{
+		$this->load->model('user');
+		$results = $this->user->active_per_user($id);
+
+		$this->load->view('users/show', array('past_item' => $results));
+	}
 
 }

@@ -33,7 +33,7 @@
       <li><a data-toggle="pill" href="#menu2">(Item name 3)</a></li>
       <li><a data-toggle="pill" href="#menu3">(Item name 4)</a></li>
     </ul>
-
+  
     <div class="tab-content">
       <div id="home" class="tab-pane fade in active">
         <h5>(Item name)</h5>
@@ -63,6 +63,18 @@
       <li><a data-toggle="pill" href="#menu2">(Item name 3)</a></li>
       <li><a data-toggle="pill" href="#menu3">(Item name 4)</a></li>
     </ul>
+
+    <div>
+    <table>
+        <?php foreach ($past_item as $item) { ?>
+        <tr>
+          <td><?= $item['name'] ?></td>
+          <td><?= $item['price'] ?></td>
+          <td><?= $item['created_on'] ?></td>
+        </tr>
+        <?php }?>
+    </table>
+  </div>
 
     <div class="tab-content">
       <div id="home" class="tab-pane fade in active">
