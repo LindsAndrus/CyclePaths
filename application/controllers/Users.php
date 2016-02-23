@@ -12,7 +12,7 @@ class Users extends CI_Controller {
 		
 		if(password_verify($password, $user['password'])) {
 			$user = array(
-				'user_id' => $id,
+				'user_id' => $user['id'],
 				'is_logged_in' => true
 			);
 			$this->session->set_userdata($user);

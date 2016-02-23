@@ -18,7 +18,7 @@
     	<?php if($this->session->flashdata('registration_errors')[0]) : ?>
     		<div class="error"><?= $this->session->flashdata('registration_errors')[0]?></div>
 		<?php endif?>
-		<form action="users/create" method="post">
+		<form action="/users/create" method="post">
 			<h4>First Name</h4><input type="text" name="fname">
 			<h4>Last Name</h4><input type="text" name="lname">
 			<h4>Email</h4><input type="text" name="email">
@@ -34,7 +34,7 @@
     	<?php if($this->session->flashdata('login_errors')) : ?>
     		<div class="error"><?= $this->session->flashdata('login_errors')?></div>
 		<?php endif?>
-		<form action="users/signin" method="post">
+		<form action="/users/signin" method="post">
 			<h4>Email</h4><input type="text" name="email">
 			<h4>Password</h4><input type="password" name="password">
 			<br>

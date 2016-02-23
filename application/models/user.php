@@ -11,7 +11,7 @@ class User extends CI_Model {
 	}
 
 	function get_user_by_email($email) {
-		$query = "SELECT first_name, password, email FROM users WHERE email = ?";
+		$query = "SELECT * FROM users WHERE email = ?";
 		$values = array($email);
 		return $this->db->query($query, $values)->row_array();
 	}
