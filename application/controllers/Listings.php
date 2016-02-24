@@ -13,8 +13,6 @@ class Listings extends CI_Controller {
 	{
 		$this->load->model('listing');
 		$matches = $this->listing->search_results();
-		// var_dump($results);
-		// die();
 
 		$this->load->view('homeii', array('matches' => $matches));
 
@@ -27,7 +25,7 @@ class Listings extends CI_Controller {
 
 	public function contact()
 	{
-		$this->load->view('contactus');
+		$this->load->view('contact_us');
 	}
 
 	public function create_item()
