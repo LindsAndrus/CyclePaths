@@ -20,7 +20,6 @@
 		<img src="/assets/images/logo.png" height="60px" width="250px"></img>
 		</div>
 
-	  	<div class="container">
 	    	<?php if($this->session->userdata('user_id')) : ?>
 				<a href="/logout">LOGOUT</a>
 		 	<?php else : ?>
@@ -28,7 +27,6 @@
 		 	<?php endif ?>
 			<a href="/about">ABOUT</a>
 			<a href="/contact">CONTACT US</a>
-	  	</div>
 	</nav>
 
 </div>

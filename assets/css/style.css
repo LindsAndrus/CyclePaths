@@ -21,14 +21,25 @@ body{
 	background-position:center;
 }*/
 
+/* LOGIN_REG_PAGE */
+
+.login_content{
+	margin: auto;
+	border: 1px solid black;
+}
+
+
 
 /*LISTINGS*/
-#listings_container{
+.subcontainer{
 	margin: auto;
 	margin-top: 20px;
 	width: 900px;
 	min-height: 300px;
 	padding: 10px 30px 30px 30px;
+}
+#register{
+	
 }
 
 
@@ -116,18 +127,6 @@ body{
 }
 
 
-/* HOME II */
-#homeii_container{
-	margin: auto;
-	margin-top: 20px;
-	width: 900px;
-	min-height: 300px;
-	padding: 30px 0 0 80px;
-	background-color: yellow;
-}
-#accordion{
-	width: 200px;
-}
 
 
 

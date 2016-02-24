@@ -1,0 +1,36 @@
+/* HOME II */
+#homeii_container{
+	margin: 0 auto;
+	float: none;
+	/*margin: 20px 0 100px 0;*/
+	min-height: 600px;
+	padding: 30px 80px 0 80px;
+}
+.category_container1{
+	/*width: 800px;*/
+	display: inline-block;
+	margin: 0 auto;
+	margin-top: 170px;
+	/* Center this div */
+}
+.container img{
+	border: 1px solid silver;
+/*	margin: 0 auto;*/
+}
+#home_content{
+	width: 800px;
+	height: 200px;
+	margin: 0 auto;
+	margin: 30px 0 100px 0;
+}
+.dropdown{
+	/*width: 15%;*/
+	/*height: 300px;*/
+	margin: 1em auto;
+}
+.btn{
+	width: 180px;
+}
+
+
+/**/
