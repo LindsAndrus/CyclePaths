@@ -3,22 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <title>Create a Listing</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <style type="text/css">
+    #listings_container{
+      background: url("assets/images/bike.png");
+      background-repeat:no-repeat;
+      -webkit-background-size:cover;
+      -moz-background-size:cover;
+      -o-background-size:cover;
+      background-size:cover;
+      background-position:center;
+    }
+  </style> 
 
-</head>     
-<body>  
+</head> 
 
-<?php $this->load->view('header.php') ?>
+<?php $this->load->view('header') ?>
 
+  <div id="listings_container">
+    <h2>Your Search Results!</h2>
+    <h4>Your Search returned <?= count($cat_results) ?> results!</h4>
 
-<h1 class="page-header">CyclePath</h1>
-
-<h3>Your Search returned <?= count($cat_results) ?>!</h3>
-<!-- 
-  <div class="row">
-    <div class="col-md-5"> -->
     <form>
       <th>Image</th>
       <th>Item</th>
@@ -37,7 +43,8 @@
         </tr>
       <?php } ?>
     </form>
-<!-- </div> -->
+
+  </div>
 
 </body>
 </html>

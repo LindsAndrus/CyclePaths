@@ -22,6 +22,7 @@
   <?php $this->load->view('header') ?>
 
   <div id="item_container">
+    <h2>Your Item Is Here!</h2>
     <div id="item_info">
       <?php foreach ($ind_item as $results) {?>
         <p>THIS IS THE IMAGE</p>
