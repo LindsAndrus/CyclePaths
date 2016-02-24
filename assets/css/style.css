@@ -58,10 +58,13 @@ body{
 /* ABOUT */
 #about_container{
 	margin: auto;
-	margin-top: 20px;
-	width: 900px;
+	margin-top: 10px;
 	min-height: 300px;
 	padding: 30px 0 0 80px;
+}
+#content_container{
+	margin: auto;
+	width: 800px;
 }
 .about_text{
 	width: 250px;
