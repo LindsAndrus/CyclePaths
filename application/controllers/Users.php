@@ -79,8 +79,9 @@ class Users extends CI_Controller {
 		} else {
 			$this->load->model('User');
 			$user = $this->User->get_user_by_id($this->session->userdata('user_id'));
+			$this->do_upload($user['image_id']);
 			if (!$this->User->update_validate($data)) {
-				//set errors
+				//There are also errors in the image
 				$errors = array(validation_errors());
 				$this->session->set_flashdata('edit_errors', $errors);
 				redirect("/users/edit/" . $this->session->userdata('user_id'));
@@ -92,11 +93,13 @@ class Users extends CI_Controller {
 						#redirect to home page
 						redirect("/users/show/" . $this->session->userdata('user_id'));
 				} else {
-					//set errors
+					//password was not correct
 					$this->session->set_flashdata('edit_errors', array("Invalid password!"));
 					redirect("/users/edit/" . $this->session->userdata('user_id'));
 				}
 			}
+
+			//if errors is not empty,
 		}
 	}
 
@@ -105,7 +108,8 @@ class Users extends CI_Controller {
 		redirect("/");
 	}
 
-	function do_upload() {
+
+	function do_upload($image_id) {
 		//create the users folder if it doesn't exist
 		$path = './assets/images/users/'.$this->session->userdata('user_id')."/";
 		if(!is_dir($path)) { //create the folder if it's not already exists
@@ -118,8 +122,13 @@ class Users extends CI_Controller {
 		$config['overwrite'] = true;
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload()) {
-			$error = array('error' => $this->upload->display_errors());
-			//redirect
+			if ("You did not select a file to upload." != $this->upload->display_errors("","")) {
+				$this->session->set_flashdata("edit_errors", array("You can only upload a jpeg, jpg, gif, or png file"));
+				redirect("/users/edit/" . $this->session->userdata('user_id'));
+			}
+			else {
+				// here they did not provide a file upload so we dont care
+			}
 		} else {
 			//create the image in the db:
 			//remove the initial ./ from the path
@@ -128,13 +137,11 @@ class Users extends CI_Controller {
 			$this->load->model('Image');
 			$image_id = $this->Image->create_image($path);
 			//update the user image_id to update to the new image tag
+		}
 			$this->load->model('User');
 			$data = array('user_id' => $this->session->userdata('user_id'), 'image_id' => $image_id);
 			$this->User->change_image($data);
-			//redirect to show page
-			redirect('users/show/'.$this->session->userdata('user_id'));
-
-		}
+			//end function, continue
 	}
 
 	public function change_profile_image() {

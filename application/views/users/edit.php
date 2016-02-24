@@ -16,15 +16,20 @@
 <div class="container">
 	<div class="edit">	
 	    <h3>Edit Here!</h3>
-    	<?php if($this->session->flashdata('edit_errors')[0]) : ?>
-    		<div class="error"><?= $this->session->flashdata('edit_errors')[0]?></div>
+    	<?php if($this->session->flashdata('edit_errors')) : ?>
+    		<div class="error">
+				<?php foreach($this->session->flashdata('edit_errors') as $error) : ?>
+					<?= $error ?>
+				<?php endforeach ?>
+			</div>
 		<?php endif?>
-		<form action="/users/update" method="post">
+		<?php echo form_open_multipart('users/update');?>
+			<h4>Profile Picture</h4><input type="file" name="userfile"/>
 			<h4>First Name</h4><input value="<?=$user['first_name']?>" type="text" name="first_name">
 			<h4>Last Name</h4><input value="<?=$user['last_name']?>" type="text" name="last_name">
 			<h4>Email</h4><input value="<?=$user['email']?>" type="text" name="email">
 			<h4>Password</h4><input type="password" name="password">
-			<input type="hidden" name="id" value="<?= $user['id']?>">
+			<input type="hidden" name="id" value="<?= $user['user_id']?>">
 			<br>
 			<input type="submit" value="Edit Account" class="btn btn-primary">
 		</form>

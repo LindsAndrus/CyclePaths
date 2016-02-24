@@ -35,7 +35,7 @@
   		<?= $user['last_name'] ?>
   		<?= $user['email'] ?>
 
-        <a href="/users/change_profile_image">Change your Profile Image</a>
+        <a href="/users/edit/<?=$user['user_id']?>">Edit Profile Info</a>
 	</div>
 
 

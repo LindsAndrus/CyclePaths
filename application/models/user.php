@@ -23,7 +23,8 @@ class User extends CI_Model {
 		return $this->db->query($query, $values)->row_array();
 	}
 	function get_user_by_id($id) {
-		$query = "SELECT * FROM users JOIN images ON images.id = users.image_id WHERE users.id = ?";
+		$query = "SELECT users.id AS user_id, first_name, last_name, email, link, images.id AS image_id, password
+					FROM users JOIN images ON images.id = users.image_id WHERE users.id = ?";
 		$values = array($id);
 		return $this->db->query($query, $values)->row_array();
 	}
