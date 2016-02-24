@@ -1,0 +1,12 @@
+.logo {
+	margin-left: 25px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.masthead{
+	width:530px;
+	margin: auto;
+}
+.nav-justified li a{
+border: 1px solid #d5d5d5;	
+}

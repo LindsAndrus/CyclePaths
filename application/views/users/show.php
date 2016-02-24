@@ -19,10 +19,10 @@
   </script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/css/custom.css">
-
+  <link rel="stylesheet" href="/assets/css/header.css">
   <style type="text/css">
     .container{
-      background: url("assets/images/bike.png");
+      background: url("/assets/images/bike.png");
       background-repeat:no-repeat;
       -webkit-background-size:cover;
       -moz-background-size:cover;
@@ -79,9 +79,7 @@
         <?php foreach($user['inactive_listings'] as $listing) : ?>
             <div class="tab-pane" id="<?=$listing['id']?>"> <b>Item Name: </b><?=$listing['name']?><br>
               <b>Description: </b><?=$listing['description']?><br>
-              <b>Listed Price: </b><?=$listing['price']?>
-
-
+              <b>Listed Price: </b><?=$listing['price']?> 
             </div>
         <?php endforeach ?>
       </div>
