@@ -5,7 +5,7 @@ class User extends CI_Model {
 
 	function create_user($data) {
 		$query = "INSERT INTO users (first_name, last_name, email, password, created_on, updated_on) VALUES(?,?,?,?, NOW(), NOW())";
-		$values = array($data['fname'], $data['lname'], $data['email'], $data['password']);
+		$values = array($data['first_name'], $data['last_name'], $data['email'], $data['password']);
 		$this->db->query($query, $values);
 		return $this->db->insert_id();
 	}
