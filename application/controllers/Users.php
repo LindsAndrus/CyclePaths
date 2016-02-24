@@ -16,9 +16,9 @@ class Users extends CI_Controller {
 			);
 			$this->session->set_userdata($user_data);
 			#redirect to home page
-			// redirect('/users/show/'.$user['id']);
+			 redirect('/users/show/'.$user['id']);
 
-			redirect ('/users_listings/'.$user['id']);
+//			redirect ('/users_listings/'.$user['id']);
 
 		} else {
 			//set errors
@@ -52,8 +52,12 @@ class Users extends CI_Controller {
 	public function show($id){
 		$this->load->model('User');
 		$user = $this->User->get_user_by_id($id);
-		//get active listings
-		//get inactive listings
+		//get active and inactive listings
+		$this->load->model('Listing');
+		$active_listings = $this->Listing->get_active_listings_by_seller_id($id);
+		$inactive_listings = $this->Listing->get_inactive_listings_by_seller_id($id);
+		//add them to our data
+		$user += array('active_listings' => $active_listings, 'inactive_listings' => $inactive_listings);
 		$this->load->view('users/show', array('user' => $user));
 
 	}
@@ -154,3 +158,24 @@ class Users extends CI_Controller {
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

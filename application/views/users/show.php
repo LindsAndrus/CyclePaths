@@ -4,8 +4,21 @@
   	<meta charset="UTF-8">
 	<title>Seller Page</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="/assets/css/custom.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script>
+        $(document).ready(function() {
+            $('#inactiveListingsTab a:first').tab('show');
+            $('#activeListingsTab a:first').tab('show');
+        });
+        $(function(){
+            $('.nav-tabs a').on('click', function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+            });
+        });
+    </script>
 </head>
 <body>
 
@@ -29,73 +42,30 @@
 
   <div class="pastsales">
     <h3>Your past listings</h3>
-    <ul class="nav nav-pills">
-      <li class="active"><a data-toggle="pill" href="#home">(Item name</a></li>
-      <li><a data-toggle="pill" href="#menu1">(Item name 2)</a></li>
-      <li><a data-toggle="pill" href="#menu2">(Item name 3)</a></li>
-      <li><a data-toggle="pill" href="#menu3">(Item name 4)</a></li>
+    <ul class="nav nav-tabs" id="inactiveListingsTab">
+        <?php foreach($user['inactive_listings'] as $listing) : ?>
+            <li><a data-target="#<?=$listing['id']?>"><?=$listing['name']?></a></li>
+        <?php endforeach ?>
     </ul>
-  
-    <div class="tab-content">
-      <div id="home" class="tab-pane fade in active">
-        <h5>(Item name)</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="tab-content">
+        <?php foreach($user['inactive_listings'] as $listing) : ?>
+            <div class="tab-pane" id="<?=$listing['id']?>"> We put content for <?=$listing['name']?> here!</div>
+        <?php endforeach ?>
       </div>
-      <div id="menu1" class="tab-pane fade">
-        <h5>(Item name 2)</h5>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
-      <div id="menu2" class="tab-pane fade">
-        <h5>(Item name 3)</h5>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-      </div>
-      <div id="menu3" class="tab-pane fade">
-        <h5>(Item name 4)</h5>
-        <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-      </div>
-    </div>
   </div>
 
-
-  <div class="activesales">
-    <h3>Your active listings</h3>
-    <ul class="nav nav-pills">
-      <li class="active"><a data-toggle="pill" href="#home">(Item name</a></li>
-      <li><a data-toggle="pill" href="#menu1">(Item name 2)</a></li>
-      <li><a data-toggle="pill" href="#menu2">(Item name 3)</a></li>
-      <li><a data-toggle="pill" href="#menu3">(Item name 4)</a></li>
-    </ul>
-
-    <div>
-    <table>
-        <?php foreach ($past_item as $item) { ?>
-        <tr>
-          <td><?= $item['name'] ?></td>
-          <td><?= $item['price'] ?></td>
-          <td><?= $item['created_on'] ?></td>
-        </tr>
-        <?php }?>
-    </table>
-  </div>
-
-    <div class="tab-content">
-      <div id="home" class="tab-pane fade in active">
-        <h5>(Item name)</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <div class="currentsales">
+      <h3>Your current listings</h3>
+      <ul class="nav nav-tabs" id="activeListingsTab">
+          <?php foreach($user['active_listings'] as $listing) : ?>
+              <li><a data-target="#<?=$listing['id']?>"><?=$listing['name']?></a></li>
+          <?php endforeach ?>
+      </ul>
+      <div class="tab-content">
+          <?php foreach($user['active_listings'] as $listing) : ?>
+              <div class="tab-pane" id="<?=$listing['id']?>"> We put content for <?=$listing['name']?> here!</div>
+          <?php endforeach ?>
       </div>
-      <div id="menu1" class="tab-pane fade">
-        <h5>(Item name 2)</h5>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
-      <div id="menu2" class="tab-pane fade">
-        <h5>(Item name 3)</h5>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-      </div>
-      <div id="menu3" class="tab-pane fade">
-        <h5>(Item name 4)</h5>
-        <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-      </div>
-    </div>
   </div>
 </div>
 
