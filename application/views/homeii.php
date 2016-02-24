@@ -5,11 +5,8 @@
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-
-  
-
 
 	<!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -43,9 +40,9 @@
 <body>
 	<?php $this->load->view('header') ?>
 	
-	<div class="container" id="homeii_container">
+	<div class="container-fluid bg-1 text-center" id="homeii_container">
     
-    <div class="row category_container1">
+    <div class="row">
 
       <div class="dropdown col-md-3" id="wheel_dropdown">
         <img src="/assets/images/categories/wheels.jpg" width="180px" height="180px";>
@@ -108,7 +105,9 @@
       </div>
     </div>
 
-    <div class="row category_container">
+
+
+    <div class="row">
 
       <div class="dropdown col-sm-3" id="derailleur_dropdown">
         <img src="/assets/images/categories/derailleur.jpg" width="180px" height="180px";>
