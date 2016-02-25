@@ -9,7 +9,7 @@
 	 	<?php else : ?>
 	 		<li><a href="/login">LOGIN AND REGISTRATION</a></li>
 	 	<?php endif ?>
-	 	<li><a href="/listings/create_item">CREATE LISTING</a></li>
+	 	<li><a href="/show">SELLER DASHBOARD</a></li>
 		<li><a href="/about">ABOUT</a></li>
 		<li><a href="/contact">CONTACT US</a></li>
 	</ul>
