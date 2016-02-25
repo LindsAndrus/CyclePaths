@@ -41,7 +41,6 @@ class Listings extends CI_Controller {
 			$this->input->post('description'),
 			$this->input->post('price')
 		);
-<<<<<<< Updated upstream
 		$this->do_upload($item_id);
 		redirect('/');
 	}
@@ -86,11 +85,6 @@ class Listings extends CI_Controller {
 		}
 	}
 
-	public function search_results($id)
-=======
-		redirect('/');
-	}
-
 	// public function search_results($id)
 	// {
 	// 	$this->load->model('listing');
@@ -100,7 +94,6 @@ class Listings extends CI_Controller {
 	// }
 
 	public function search($category)
->>>>>>> Stashed changes
 	{
 		$this->load->model('listing');
 		$search_result = $this->listing->search($category);

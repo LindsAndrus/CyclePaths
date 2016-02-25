@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <style type="text/css">
     #listings_container{
-      background: url("assets/images/bike.png");
+      background: url("/assets/images/bike.png");
       background-repeat:no-repeat;
       -webkit-background-size:cover;
       -moz-background-size:cover;
@@ -28,16 +28,19 @@
 
     <table>
       <tr>
-        <th>Image</th>
-        <th>Category Name</th>
-        <th>Item Name</th>
-        <th>Description</th>
-        <th>Price</th>
+        <th>Image </th>
+        <th>Category Name </th>
+        <th>Item Name </th>
+        <th>Description </th>
+        <th>Price </th>
       </tr>
       <?php foreach ($results as $list_item) {?>
       <tr>
           <td><a href="/item_page/<?= $list_item['id'] ?>">image</a></td>
     		  <td><?= $list_item['category_name'] ?></td>
+          <td><?= $list_item['item_name'] ?></td>
+          <td><?= $list_item['description'] ?></td>
+          <td><?= $list_item['price'] ?></td>
       </tr>
       <?php } ?>
     </table>
