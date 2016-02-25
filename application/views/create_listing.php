@@ -9,7 +9,7 @@
 
   <style type="text/css">
     #create_container{
-      background: url("assets/images/bike.png");
+      background: url("/assets/images/bike.png");
       background-repeat:no-repeat;
       -webkit-background-size:cover;
       -moz-background-size:cover;
@@ -28,6 +28,14 @@
     <div class="col-md-5"> -->
   <div id="search_inputs">
 	<h3>Create A Listing Here!</h3>
+
+    <?php if($this->session->flashdata('errors')) : ?>
+      <div class="error">
+        <?php foreach($this->session->flashdata('errors') as $error) : ?>
+          <?= $error ?>
+        <?php endforeach ?>
+      </div>
+    <?php endif?>
 
     <?php echo form_open_multipart('listings/create_item');?>
     

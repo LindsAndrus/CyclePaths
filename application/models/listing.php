@@ -79,6 +79,25 @@ class Listing extends CI_Model {
 		 $this->db->query($query, $values);
 
 	}
-	
+
+	function destroy_listing($item_id) {
+		$query = "DELETE FROM items WHERE id = ?";
+		$values = array($item_id);
+		$this->db->query($query, $values);
+	}
+
+	function validate($data) {
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('name', 'Name', 'trim|required|min_length[3]');
+		$this->form_validation->set_rules('category', 'Category', 'trim|required');
+		$this->form_validation->set_rules('brand', 'Brand', 'trim|required');
+		$this->form_validation->set_rules('description', 'Description', 'trim');
+		$this->form_validation->set_rules('price', 'Price', 'trim|required|regex_match[/^\d{0,15}(\.\d{0,2})?$/]');
+		if($this->form_validation->run()){
+			return true;
+		} else {
+			return false;
+		}
+	}
 
 }

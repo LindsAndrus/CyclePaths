@@ -27,14 +27,22 @@ class Listings extends CI_Controller {
 	}
 
 	public function build() {
+		//validation
 		$this->load->view('create_listing');
 	}
 
 	public function create_item()
 	{
 		$this->load->model('listing');
-		//validate
-
+		$data = $this->input->post();
+		//validate item data
+		if(!$this->listing->validate($data)) {
+			//validation failed
+			$errors = array(validation_errors());
+			$this->session->set_flashdata('errors', $errors);
+			redirect("/listings/build");
+		}
+		//validate image data
 		$item_id = $this->listing->create_item(
 
 			$this->input->post('name'),
@@ -48,6 +56,7 @@ class Listings extends CI_Controller {
 	}
 
 	function do_upload($item_id) {
+		$this->load->model('Listing');
 		//create the users folder if it doesn't exist
 		$path = './assets/images/items/'.$item_id."/";
 		if(!is_dir($path)) { //create the folder if it's not already exists
@@ -60,10 +69,15 @@ class Listings extends CI_Controller {
 		$config['overwrite'] = true;
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload()) {
+			//destroy the item we made
+			$this->listing->destroy_listing($item_id);
+			//destroy the folder we made
+			rmdir($path);
+			//add errors and redirect
 			if ("You did not select a file to upload." != $this->upload->display_errors("","")) {
-				die('errors');
-				$this->session->set_flashdata("edit_errors", array("You can only upload a jpeg, jpg, gif, or png file"));
+				$this->session->set_flashdata("errors", array("You can only upload a jpeg, jpg, gif, or png file"));
 				redirect("/listings/build/");
+
 			}
 			else {
 				// here they did not provide a file upload so we dont care
@@ -79,11 +93,14 @@ class Listings extends CI_Controller {
 			//update the user image_id to update to the new image tag
 
 			//connect image to item
-			$this->load->model('Listing');
 			$data = array('image_id' => $image_id, 'item_id' => $item_id);
 			$this->Listing->add_image_to_item($data);
 		//end function, continue
 		}
+	}
+
+	function connect_item_to_image($item_id, $image_id) {
+
 	}
 
 
