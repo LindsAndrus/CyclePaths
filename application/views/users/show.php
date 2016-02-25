@@ -17,6 +17,7 @@
           });
       });
   </script>
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/css/custom.css">
   <link rel="stylesheet" href="/assets/css/header.css">
@@ -49,7 +50,6 @@
         <a href="/users/edit/<?=$user['user_id']?>">Edit Profile Info</a>
 
 	</div>
-
   <div class="currentsales">
       <h3>Your active listings</h3>
       <ul class="nav nav-tabs" id="activeListingsTab">
@@ -80,6 +80,7 @@
             <div class="tab-pane" id="<?=$listing['id']?>"> <b>Item Name: </b><?=$listing['name']?><br>
               <b>Description: </b><?=$listing['description']?><br>
               <b>Listed Price: </b><?=$listing['price']?> 
+
             </div>
         <?php endforeach ?>
       </div>

@@ -14,7 +14,7 @@
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/css/header.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/home.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/home.css">
 
   <!-- Latest compiled and minified JavaScript -->
  
@@ -23,7 +23,7 @@
 	<style type="text/css">
 
 	  #homeii_container{
-    	background: url("assets/images/bike.png");
+    	background: url("/assets/images/bike.png");
         background-repeat:no-repeat;
         -webkit-background-size:cover;
         -moz-background-size:cover;
@@ -104,8 +104,6 @@
         </ul>
       </div>
     </div>
-
-
 
     <div class="row">
 

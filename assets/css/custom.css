@@ -6,9 +6,7 @@
     padding: 10px 14px 15px 20px;
     margin-top: 70px;
 }
-.content{
-    margin-top: 100px;
-}
+
 .login{
     margin-left: 50px;
     display: inline-block;
@@ -29,9 +27,23 @@
     padding: 0 0 50px 120px;
 }
 
-.logo{
+.user_info{
+    width: 200px;
+    text-align: center;
+    margin-top: 100px;
     display: inline-block;
 }
+.pastsales{
+    margin: 90px 0 80px 215px;
+    width: 70%;
+}
+.currentsales{
+    margin: 90px 0 0 10px;
+    width: 70%;
+    display: inline-block;
+    vertical-align: top;
+}
+
 .links{
     padding-top: 20px;
     display: inline-block;
@@ -40,4 +52,9 @@
 a{
     border-right: 1px solid silver;
     padding-right: 5px;
+}
+
+.listing{
+    border: 1px solid silver;
+    padding: 30px 0 30px 100px;
 }
