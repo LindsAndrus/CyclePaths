@@ -4,13 +4,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Listing extends CI_Model {
 
 	function get_active_listings_by_seller_id($id) {
-		$query = 'SELECT * FROM items WHERE seller_id = ? AND active_status = "active"';
+		$query = 'SELECT items.id, items.name, items.description, items.price, images.link FROM items JOIN items_has_images  ON items_has_images.item_id = items.id JOIN images  ON images.id = items_has_images.image_id WHERE seller_id = ? AND active_status = "active"';
 		$values = array($id);
 		return $this->db->query($query, $values)->result_array();
 	}
 
 	function get_inactive_listings_by_seller_id($id) {
-		$query = 'SELECT * FROM items WHERE seller_id = ? AND active_status = "inactive"';
+		$query = 'SELECT items.id, items.name, items.description, items.price, images.link FROM items JOIN items_has_images  ON items_has_images.item_id = items.id JOIN images  ON images.id = items_has_images.image_id WHERE seller_id = ? AND active_status = "inactive"';
 		$values = array($id);
 		return $this->db->query($query, $values)->result_array();
 	}
