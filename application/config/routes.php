@@ -5,6 +5,7 @@ $route['logout'] = 'Users/logout';
 $route['login'] = 'Users/login_reg_page';
 $route['contact'] = 'listings/contact';
 $route['about'] = 'listings/about';
+$route['home'] = 'listings/index';
 $route['/users/show/(:num)'] = 'Users/show/$1';
 $route['/users/edit/(:num)'] = 'Users/edit/$1';
 $route['default_controller'] = 'listings';

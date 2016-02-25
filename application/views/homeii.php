@@ -32,6 +32,10 @@
         background-position:center;
         width: 90%;
     }
+    #home_content{
+      width: 60%;
+      margin-left: 20%;
+    }
 
 	</style> 
 <title>Cycle Path Homepage</title>
@@ -40,8 +44,7 @@
 <body>
 	<?php $this->load->view('header') ?>
 	
-	<div class="container-fluid bg-1 text-center" id="homeii_container">
-    
+  <div class="container-fluid bg-1 text-center" id="homeii_container">
     <div class="row">
 
       <div class="dropdown col-md-3" id="wheel_dropdown">
@@ -171,6 +174,7 @@
 
     </div>
 
+
     <div class="content" id="home_content">
       <div class="seller col-md-6">
         <h4>Seller of the Week</h4>
@@ -181,13 +185,6 @@
         <p>My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there. Then I'm gonna shoot that bitch in the kneecaps, find out where my goddamn money is. She gonna tell me too. Hey, look at me when I'm talking to you, motherfucker. You listen: we go in there, and that nigga Winston or anybody else is in there, you the first motherfucker to get shot. You understand?</p>
       </div>
     </div>
-
-  </div>
  
 </body>
 </html>
-
-
-
-
-
