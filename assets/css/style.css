@@ -66,6 +66,7 @@
 	margin-top: 100px;
 	width: 600px;
 	border: 1px solid gray;
+	border-radius: 10px;
 	background-color: #F0F0F0;
 	-webkit-filter: opacity(75%);
 	-webkit-backdrop-filter:blur(10px);
@@ -132,7 +133,7 @@
 	margin: auto;
 }
 .contact_subcontainer{
-	width: 800px;
+	width: 70%;
 	margin: 200px;
 	border: 1px gray solid;
 	border-radius: 10px;
@@ -176,6 +177,8 @@
 /* LISTINGS */
 #sub_container{
 	width: 900px;
+	margin: auto;
+	padding-top: 100px;
 }
 
 

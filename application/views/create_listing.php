@@ -34,36 +34,7 @@
     </div>
 
     <div id="create_category">
-      Part Category: <br>
-      <form role="form">
-        <label class="radio-inline">
-          <input type="radio" name="optradio">Wheels
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="optradio">Brakes
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="optradio">Shifters/Derailleurs
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="optradio">Handbars/Grips
-        </label><br>
-        <label class="radio-inline">
-          <input type="radio" name="optradio">Pedals/Cleats
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="optradio">Cranksets/Chainrings/Chainsets
-        </label><br>
-        <label class="radio-inline">
-          <input type="radio" name="optradio">Chains/Cassettes
-        </label>
-        <label class="radio-inline">
-          <input type="radio" name="optradio">Saddles/Seats/Seatposts
-        </label>
-      </form>
-    </div>
-
-     <!--  Category: <select type='select' name='category' class="form-control">
+      Category: <select type='select' name='category' class="form-control">
         <option value="wheels">Wheels</option>
         <option value="brakes">Brakes</option>
         <option value="shifters/derailleurs">Shifters/Derailleurs</option>
@@ -73,7 +44,7 @@
         <option value="chains/cassettes">Chains/Cassettes</option>
         <option value="saddles/seats/seatposts">Saddles/Seats/Seatposts</option>
       </select>      
-    </div> -->
+    </div>
    
     <div>
       Brand: <select type='select' name='brand' class="form-control">

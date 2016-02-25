@@ -5,7 +5,7 @@
 	<ul class="nav nav-pills nav-justified">
 		<li><a href="/home">HOME</a></li>
     	<?php if($this->session->userdata('user_id')) : ?>
-    		<li><a href="Users/show/<?= $this->session->userdata('user_id')?>">SELLER DASHBOARD</a></li>
+    		<li><a href="/users/show/<?= $this->session->userdata('user_id')?>">SELLER DASHBOARD</a></li>
 	 	<?php endif ?>
 		<li><a href="/about">ABOUT</a></li>
 		<li><a href="/contact">CONTACT US</a></li>
