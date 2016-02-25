@@ -22,6 +22,18 @@ class Listing extends CI_Model {
 		return $this->db->query($query)->result_array();
 	}
 
+	public function search($category)
+	{
+		$query = "SELECT categories.name as category_name , items.name as item_name, items.description, items.price 
+			FROM items
+			JOIN categories
+			ON items.categories_id = categories.id
+			WHERE categories.name LIKE ? AND items.active_status = 'active'";
+		$category = '%' . $category . '%';
+		return $this->db->query($query, $category)->result_array();
+	}
+
+
 	public function category_values($id)
 	{
 		$query = "SELECT items.id, items.name, items.description, items.price, brands.name AS brand_name, users.email FROM items JOIN users ON items.seller_id = users.id JOIN items_has_brands ON items_has_brands.items_id = items.id JOIN brands ON brands.id = items_has_brands.brands_id WHERE items.categories_id = {$id}";

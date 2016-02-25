@@ -13,9 +13,7 @@ class Listings extends CI_Controller {
 	{
 		$this->load->model('listing');
 		$matches = $this->listing->search_results();
-
 		$this->load->view('homeii', array('matches' => $matches));
-
 	}
 
 	public function about()
@@ -43,6 +41,7 @@ class Listings extends CI_Controller {
 			$this->input->post('description'),
 			$this->input->post('price')
 		);
+<<<<<<< Updated upstream
 		$this->do_upload($item_id);
 		redirect('/');
 	}
@@ -88,11 +87,24 @@ class Listings extends CI_Controller {
 	}
 
 	public function search_results($id)
+=======
+		redirect('/');
+	}
+
+	// public function search_results($id)
+	// {
+	// 	$this->load->model('listing');
+	// 	$search_results = $this->listing->category_values($id);
+
+	// 	$this->load->view('listings', array('cat_results' => $search_results));
+	// }
+
+	public function search($category)
+>>>>>>> Stashed changes
 	{
 		$this->load->model('listing');
-		$search_results = $this->listing->category_values($id);
-
-		$this->load->view('listings', array('cat_results' => $search_results));
+		$search_result = $this->listing->search($category);
+		$this->load->view('listings', array('results' => $search_result));		
 	}
 
 	public function item_page($num)

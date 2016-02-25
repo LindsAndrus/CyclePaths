@@ -13,8 +13,8 @@
 	margin-top: 10px;
 	/* Center this div */
 }
-.container img{
-	border: 1px solid silver;
+.row img{
+	border: 1px solid gray;
 /*	margin: 0 auto;*/
 }
 #home_content{

@@ -49,62 +49,32 @@
 
       <div class="dropdown col-md-3" id="wheel_dropdown">
         <img src="/assets/images/categories/wheels.jpg" width="180px" height="180px";>
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Wheels
-          <span class="caret"></span>
+        <button class="btn btn-default" type="button">
+          <a href="search/wheels">Wheels</a>
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><a href="#">Sub Cat 1</a></li>
-          <li><a href="#">Sub Cat 2</a></li>
-          <li><a href="#">Sub Cat 3</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#">Separated link</a></li>
-        </ul>
       </div>
      
+
+
       <div class="dropdown col-sm-3" id="brakes_dropdown">
         <img src="/assets/images/categories/brakes.jpg" width="180px" height="180px";>
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Brakes
-          <span class="caret"></span>
+        <button class="btn btn-default" type="button">
+          <a href="search/brakes">Brakes</a>
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <li><a href="#">Sub Cat 1</a></li>
-          <li><a href="#">Sub Cat 2</a></li>
-          <li><a href="#">Sub Cat 3</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#">Separated link</a></li>
-        </ul>
       </div>
 
       <div class="dropdown col-sm-3" id="chains_dropdown">
         <img src="/assets/images/categories/chains.jpg" width="180px" height="180px";>
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Chains
-          <span class="caret"></span>
+        <button class="btn btn-default" type="button">
+          <a href="search/derailleurs">Shifters/Derailleurs</a>
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
-          <li><a href="#">Sub Cat 1</a></li>
-          <li><a href="#">Sub Cat 2</a></li>
-          <li><a href="#">Sub Cat 3</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#">Separated link</a></li>
-        </ul>
       </div>
 
       <div class="dropdown col-sm-3" id="crankset_dropdown">
         <img src="/assets/images/categories/crankset.jpg" width="180px" height="180px";>
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Cranksets
-          <span class="caret"></span>
+        <button class="btn btn-default" type="button">
+          <a href="search/grips">Handlebars/Grips</a>
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
-          <li><a href="#">Sub Cat 1</a></li>
-          <li><a href="#">Sub Cat 2</a></li>
-          <li><a href="#">Sub Cat 3</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#">Separated link</a></li>
-        </ul>
       </div>
     </div>
 
@@ -112,63 +82,31 @@
 
       <div class="dropdown col-sm-3" id="derailleur_dropdown">
         <img src="/assets/images/categories/derailleur.jpg" width="180px" height="180px";>
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Derailleur
-          <span class="caret"></span>
+        <button class="btn btn-default" type="button">
+          <a href="search/pedals">Pedals/Cleats</a>
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu5">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#">Separated link</a></li>
-        </ul>
       </div>
 
       <div class="dropdown col-sm-3" id="handlebar_dropdown">
         <img src="/assets/images/categories/handlebar.jpg" width="180px" height="180px";>
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Handlebar
-          <span class="caret"></span>
+       <button class="btn btn-default" type="button">
+          <a href="search/crankset">Cranksets/Chainsets</a>
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu6">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#">Separated link</a></li>
-        </ul>
       </div>
 
       <div class="dropdown col-sm-3" id="pedals_dropdown">
         <img src="/assets/images/categories/pedals.jpg" width="180px" height="180px";>
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu7" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Pedals
-          <span class="caret"></span>
+        <button class="btn btn-default" type="button">
+          <a href="search/chains">Chains/Cassettes</a>
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu7">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#">Separated link</a></li>
-        </ul>
       </div>
 
         
       <div class="dropdown col-md-3" id="saddle_dropdown">
         <img src="/assets/images/categories/saddle.jpg" width="180px" height="180px";>
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu8" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Saddle
-          <span class="caret"></span>
+        <button class="btn btn-default" type="button">
+          <a href="search/saddles">Saddles/Seats/Seatposts</a>
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu8">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#">Separated link</a></li>
-        </ul>
       </div>
       </div>
 

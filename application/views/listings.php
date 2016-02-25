@@ -24,26 +24,23 @@
 
   <div id="listings_container">
     <h2>Your Search Results!</h2>
-    <h4>Your Search returned <?= count($cat_results) ?> results!</h4>
+    <h4>Your Search returned <?= count($results) ?> results!</h4>
 
-    <form>
-      <th>Image</th>
-      <th>Item</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Brand</th>
-      <th>Seller</th>
-      <?php foreach ($cat_results as $list_item) {?>
-        <tr>
+    <table>
+      <tr>
+        <th>Image</th>
+        <th>Category Name</th>
+        <th>Item Name</th>
+        <th>Description</th>
+        <th>Price</th>
+      </tr>
+      <?php foreach ($results as $list_item) {?>
+      <tr>
           <td><a href="/item_page/<?= $list_item['id'] ?>">image</a></td>
-    		  <td><?= $list_item['name'] ?></td>
-          <td><?= $list_item['description'] ?></td>
-          <td><?= $list_item['price'] ?></td>
-          <td><?= $list_item['brand_name'] ?></td>
-          <td><?= $list_item['email'] ?></td>  
-        </tr>
+    		  <td><?= $list_item['category_name'] ?></td>
+      </tr>
       <?php } ?>
-    </form>
+    </table>
 
   </div>
 
