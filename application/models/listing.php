@@ -28,7 +28,7 @@ class Listing extends CI_Model {
 		return $this->db->query($query)->result_array();
 	}
 
-	public function create_item($name, $category, $brand, $description, $price, $id)
+	public function create_item($name, $category, $brand, $description, $price)
 	{
 
 		$cat = "SELECT id FROM categories WHERE name = ?";
@@ -39,7 +39,7 @@ class Listing extends CI_Model {
 		$brand_id = $this->db->query($brandquery, $brand)->row_array();
 
 		//Set variable $user_id to user id from session data
-		$user_id = $this->session->userdata($user['user_id']);
+		$user_id = $this->session->userdata('user_id');
 
 		//Last line inserts ID of the user that created the posting
 		$query = "INSERT INTO items(name, description, price, created_on, updated_on, categories_id, seller_id) 
@@ -50,6 +50,8 @@ class Listing extends CI_Model {
 		$item_id = $this->db->insert_id();
 		$query2 = "INSERT INTO items_has_brands (items_id, brands_id) VALUES ({$item_id}, {$brand_id['id']})";
 		$this->db->query($query2);
+
+		return $item_id;
 	}
 
 	public function display_item($num)
@@ -57,6 +59,13 @@ class Listing extends CI_Model {
 		$query = "SELECT items.id, items.name, items.description, items.price, categories.name AS category, brands.name AS brand_name, users.email FROM items JOIN users ON items.seller_id = users.id JOIN categories ON categories.id = items.categories_id JOIN items_has_brands ON items_has_brands.items_id = items.id JOIN brands ON brands.id = items_has_brands.brands_id WHERE items.id = {$num}";
 
 		return $this->db->query($query)->result_array();
+	}
+
+	function add_image_to_item($data) {
+		$query = "UPDATE items SET image_id = ? WHERE id = ?";
+		$values = array($data['image_id'], $data['item_id']);
+		 $this->db->query($query, $values);
+
 	}
 	
 

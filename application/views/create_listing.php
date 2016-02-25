@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Create a Listing</title>
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/header.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -29,10 +29,10 @@
   <div id="search_inputs">
 	<h3>Create A Listing Here!</h3>
 
-  <form action='/listings/create_item' method='post' class="well">
+    <?php echo form_open_multipart('listings/create_item');?>
     
     <div>
-      Name: <input type='text' name='name' class="form-control"></input>      
+      Name: <input type='text' name='name' class="form-control">
     </div>
     <div>
       Category: <select type='select' name='category' class="form-control">
@@ -64,18 +64,15 @@
     </div>
 
     <div>
-      Description: <input type='text' name='description' class="form-control"></input> 
+      Description: <input type='text' name='description' class="form-control">
     </div>
 
     <div>
-      Price: <input type='number' name='price' step="0.01" class="form-control"></input> 
+      Price: <input type='number' name='price' step="0.01" class="form-control">
     </div>
     
     <div>
-      <label class="btn btn-success .btn-xs" for="my-file-selector" id="upload_image">
-        <input id="my-file-selector" type="file" style="display:none;">
-        Upload Image Here
-      </label>
+      <input type="file" name="userfile"/>
     </div>
 
     <input type='submit' value='Post' class="btn btn-primary">
