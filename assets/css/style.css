@@ -143,3 +143,13 @@
 	margin-top: 30px;
 }
 
+/* EDIT */
+#profile_edit{
+	margin-top: 100px;
+	margin: auto;
+	width: 380px;
+	padding: 30px;
+	border: 1px solid gray;
+	border-radius: 10px;
+	background-color: #F0F0F0;
+}
