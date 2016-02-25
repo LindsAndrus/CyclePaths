@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'listings';
 $route['logout'] = 'Users/logout';
 $route['login'] = 'Users/login_reg_page';
+$route['show'] = 'listings/build';
 $route['contact'] = 'listings/contact';
 $route['about'] = 'listings/about';
 $route['home'] = 'listings/index';

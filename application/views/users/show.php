@@ -32,10 +32,8 @@
       background-position:center;
     }
   </style>
-
 </head>
 <body>
-
   <div class="header">
     <?php $this->load->view('header'); ?>
   </div>
@@ -46,23 +44,28 @@
   		<?= $user['first_name'] ?>
   		<?= $user['last_name'] ?>
   		<?= $user['email'] ?><br>
-
-        <a href="/users/edit/<?=$user['user_id']?>">Edit Profile Info</a>
+      <a href="/users/edit/<?=$user['user_id']?>">Edit Profile Info</a>
+      <div>
+        <form action="/create_item" method="post">
+          <input type="submit" value="Create New Listing">
+        </form>
+      </div>
 
 	</div>
   <div class="currentsales">
       <h3>Your active listings</h3>
       <ul class="nav nav-tabs" id="activeListingsTab">
-          <?php foreach($user['active_listings'] as $listing) : 
-          ?>
+          <?php foreach($user['active_listings'] as $listing) : ?>
               <li><a data-target="#<?=$listing['id']?>"><?=$listing['name']?></a></li>
           <?php endforeach ?>
       </ul>
       <div class="tab-content listing">
           <?php foreach($user['active_listings'] as $listing) : ?>
-              <div class="tab-pane" id="<?=$listing['id']?>"> <b>Item Name: </b><?=$listing['name']?><br> 
+              <div class="tab-pane" id="<?=$listing['id']?>"> 
+                <img src="<?=$listing['link']?>" width="15%" height "15%"><br>
+                <p><b>Item Name: </b><?=$listing['name']?><br> 
                 <b>Description: </b><?=$listing['description']?><br>
-                <b>Listed Price: </b><?=$listing['price']?>
+                <b>Listed Price: </b><?=$listing['price']?></p>
               </div>
           <?php endforeach ?>
       </div>
@@ -77,20 +80,15 @@
     </ul>
       <div class="tab-content listing">
         <?php foreach($user['inactive_listings'] as $listing) : ?>
-            <div class="tab-pane" id="<?=$listing['id']?>"> <b>Item Name: </b><?=$listing['name']?><br>
+            <div class="tab-pane" id="<?=$listing['id']?>"> 
+              <img src="<?=$listing['link']?>" width="15%" height "15%"><br>
+              <p><b>Item Name: </b><?=$listing['name']?><br>
               <b>Description: </b><?=$listing['description']?><br>
-              <b>Listed Price: </b><?=$listing['price']?> 
-
+              <b>Listed Price: </b><?=$listing['price']?></p>
             </div>
         <?php endforeach ?>
       </div>
   </div>
-
-
-  
-
-
 </div>
-
 </body>
 </html>
