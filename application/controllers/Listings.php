@@ -27,8 +27,12 @@ class Listings extends CI_Controller {
 	}
 
 	public function build() {
-		//validation
-		$this->load->view('create_listing');
+		if($this->session->userdata('is_logged_in')) {
+			$this->load->view('create_listing');
+		} else {
+			show_404();
+		}
+
 	}
 
 	public function create_item()
@@ -98,12 +102,6 @@ class Listings extends CI_Controller {
 		//end function, continue
 		}
 	}
-
-	function connect_item_to_image($item_id, $image_id) {
-
-	}
-
-
 
 	public function search($category)
 	{
