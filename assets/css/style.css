@@ -1,32 +1,5 @@
 /*GENERAL STYLING FOR ALL PAGES*/
 
-/*.container{
-	margin: auto;
-	background: url("assets/images/bike.png");
-	background-repeat:no-repeat;
-	-webkit-background-size:cover;
-	-moz-background-size:cover;
-	-o-background-size:cover;
-	background-size:cover;
-	background-position:center;
-}*/
-/*
-body{
-	background: url("assets/images/bike.png");
-	background-repeat:no-repeat;
-	-webkit-background-size:cover;
-	-moz-background-size:cover;
-	-o-background-size:cover;
-	background-size:cover;
-	background-position:center;
-}*/
-
-/* LOGIN_REG_PAGE */
-
-.login_content{
-	margin: auto;
-	border: 1px solid black;
-}
 #main_container{
 	background: url("/assets/images/bike.png");
 	background-repeat:no-repeat;
@@ -35,31 +8,43 @@ body{
 	-o-background-size:cover;
 	background-size:cover;
 	background-position:center;
-	width: 800px;
+	width: 100%;
+	min-height: 600px;
 	margin: auto;
 }
-.subcontainer h3{
-	color: #0052cc;
+
+
+/* LOGIN_REG_PAGE */
+.login_subcontainer{
+	margin: 150px 0 150px 0;
 }
+
 #login{
 	display: inline-block;
 	vertical-align: top;
-	margin-left: 12%;
+	text-align: left;
+	margin-left: 100px;
+	border: 1px solid gray;
+	border-radius: 10px;
+	padding: 20px;
+	width: 370px;
+	background-color: #F0F0F0;
 }
-
+.input-group{
+	margin: 15px 0 15px 0;
+	width: 300px;
+}
 #register{
 	display: inline-block;
-	vertical-align: top;
-	margin-left: 17%;
+	text-align: left;
+	border: 1px solid gray;
+	border-radius: 10px;
+	padding: 20px;
+	width: 370px;
+	background-color: #F0F0F0;
 }
 
-
-<<<<<<< Updated upstream
-/* LISTINGS */
-=======
-
 /*LISTINGS*/
->>>>>>> Stashed changes
 .subcontainer{
 	margin: auto;
 	margin-top: 20px;
@@ -74,11 +59,13 @@ body{
 
 /* ITEM_PAGE */
 #item_container{
+	padding: 150px 30px 30px 30px;
 	margin: auto;
-	margin-top: 20px;
-	width: 900px;
-	min-height: 300px;
-	padding: 10px 30px 30px 30px;
+	width: 800px;
+}
+#item_info{
+	border: 1px solid gray;
+	padding: 20px;
 }
 
 

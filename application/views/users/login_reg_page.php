@@ -13,7 +13,7 @@
 <body>
 	<?php $this->load->view('header') ?>
 
-<div id="main_container">
+<div class="container-fluid bg-1 text-center" id="main_container">
 	<div class="login_subcontainer">
 
 	<div id="register">	
@@ -21,16 +21,35 @@
     	<?php if($this->session->flashdata('registration_errors')[0]) : ?>
     		<div class="error"><?= $this->session->flashdata('registration_errors')[0]?></div>
 		<?php endif?>
-		<form action="/users/create" method="post">
-			<h4>First Name</h4><input type="text" name="first_name">
-			<h4>Last Name</h4><input type="text" name="last_name">
-			<h4>Email</h4><input type="text" name="email">
-			<h4>Password</h4><input type="password" name="password">
-			<h4>Confirm Password</h4><input type="password" name="confirm_password">
-			<br>
-			<input type="submit" value="Create Account" class="btn btn-primary">
-		</form>
-	</div>
+		
+			<form action="/users/create" method="post">
+				<div class="input-group">
+				  	<input type="text" name="first_name" class="form-control" placeholder="First Name" aria-describedby="basic-addon1">
+				</div>
+				<div class="input-group">
+				  	<input type="text" name="last_name" class="form-control" placeholder="Last Name" aria-describedby="basic-addon1">
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon" id="sizing-addon3">@</span>
+				  	<input type="email" name="email" class="form-control" placeholder="Email Address" aria-describedby="basic-addon1">
+				</div>
+				<div class="input-group">
+				  	<input type="password" name="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+				</div>
+				<div class="input-group">
+				  	<input type="password" name="password" class="form-control" placeholder="Confirm Password" aria-describedby="basic-addon1">
+				</div>
+				<input type="submit" value="Create Account" class="btn btn-primary">
+				<!-- <h4>First Name</h4><input type="text" name="first_name">
+				<h4>Last Name</h4><input type="text" name="last_name">
+				<h4>Email</h4><input type="text" name="email">
+				<h4>Password</h4><input type="password" name="password">
+				<h4>Confirm Password</h4><input type="password" name="confirm_password">
+				<br>
+				<input type="submit" value="Create Account" class="btn btn-primary"> -->
+			</form>
+		</div>
+	
 
 	<div id="login">	
     <h3>Login Here!</h3>
@@ -38,9 +57,13 @@
     		<div class="error"><?= $this->session->flashdata('login_errors')?></div>
 		<?php endif?>
 		<form action="/users/signin" method="post">
-			<h4>Email</h4><input type="text" name="email">
-			<h4>Password</h4><input type="password" name="password">
-			<br>
+			<div class="input-group">
+				<span class="input-group-addon" id="sizing-addon3">@</span>
+				<input type="email" name="email" class="form-control" placeholder="Email Address" aria-describedby="basic-addon1">
+			</div>
+			<div class="input-group">
+				<input type="password" name="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+			</div>
 			<input type="submit" value="Login" class="btn btn-primary">
 		</form>
 	</div>

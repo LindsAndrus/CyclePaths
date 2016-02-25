@@ -14,38 +14,19 @@
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
   <link rel="stylesheet" href="/assets/css/header.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <link rel="stylesheet" type="text/css" href="/assets/css/home.css">
+  
 
   <!-- Latest compiled and minified JavaScript -->
- 
- 
-
-	<style type="text/css">
-
-	  #homeii_container{
-    	background: url("/assets/images/bike.png");
-      background-repeat:no-repeat;
-      -webkit-background-size:cover;
-      -moz-background-size:cover;
-      -o-background-size:cover;
-      background-size:cover;
-      background-position:center;
-      width: 90%;
-    }
-    #home_content{
-      width: 60%;
-      margin-left: 20%;
-    }
-
-	</style> 
 <title>Cycle Path Homepage</title>
 </head>
 
 <body>
 	<?php $this->load->view('header') ?>
 	
-  <div class="container-fluid bg-1 text-center" id="homeii_container">
-    <div class="row">
+  <div class="container-fluid bg-1 text-center" id="main_container">
+    <div class="row" id="row_1">
 
       <div class="dropdown col-md-3" id="wheel_dropdown">
         <img src="/assets/images/categories/wheels.jpg" width="180px" height="180px";>
@@ -78,7 +59,7 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row" id="row_2">
 
       <div class="dropdown col-sm-3" id="derailleur_dropdown">
         <img src="/assets/images/categories/derailleur.jpg" width="180px" height="180px";>
