@@ -24,13 +24,13 @@
 
 	  #homeii_container{
     	background: url("/assets/images/bike.png");
-        background-repeat:no-repeat;
-        -webkit-background-size:cover;
-        -moz-background-size:cover;
-        -o-background-size:cover;
-        background-size:cover;
-        background-position:center;
-        width: 90%;
+      background-repeat:no-repeat;
+      -webkit-background-size:cover;
+      -moz-background-size:cover;
+      -o-background-size:cover;
+      background-size:cover;
+      background-position:center;
+      width: 90%;
     }
     #home_content{
       width: 60%;

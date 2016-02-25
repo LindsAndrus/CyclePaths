@@ -15,6 +15,7 @@
 	-o-background-size:cover;
 	background-size:cover;
 	background-position:center;
+	width: 90%;
 	}
 	</style>
 
