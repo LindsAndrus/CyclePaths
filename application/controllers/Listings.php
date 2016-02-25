@@ -33,6 +33,8 @@ class Listings extends CI_Controller {
 	public function create_item()
 	{
 		$this->load->model('listing');
+		//validate
+
 		$item_id = $this->listing->create_item(
 
 			$this->input->post('name'),
@@ -66,7 +68,6 @@ class Listings extends CI_Controller {
 			else {
 				// here they did not provide a file upload so we dont care
 				//defaults to 2, we dont need to do anything
-				die('error2');
 			}
 		} else {
 			//create the image in the db:
@@ -85,13 +86,7 @@ class Listings extends CI_Controller {
 		}
 	}
 
-	// public function search_results($id)
-	// {
-	// 	$this->load->model('listing');
-	// 	$search_results = $this->listing->category_values($id);
 
-	// 	$this->load->view('listings', array('cat_results' => $search_results));
-	// }
 
 	public function search($category)
 	{
