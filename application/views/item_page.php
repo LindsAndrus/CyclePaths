@@ -20,7 +20,7 @@
 
       <div id="item_info">
         <?php foreach ($ind_item as $results) {?>
-          <p>THIS IS THE IMAGE</p>
+          <p><img src="<?= $results['link'] ?>" width="200px" height="200px"></p>
           <h2><?= $results['name'] ?></h2>
           <p>
             <?= $results['brand_name'] ?><br>

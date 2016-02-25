@@ -24,10 +24,12 @@ class Listing extends CI_Model {
 
 	public function search($category)
 	{
-		$query = "SELECT categories.name as category_name , items.name as item_name, items.description, items.price 
+		$query = "SELECT categories.name as category_name , items.id , items.name as item_name, items.description, items.price, images.link 
 			FROM items
 			JOIN categories
 			ON items.categories_id = categories.id
+			JOIN images
+			ON items.image_id = images.id
 			WHERE categories.name LIKE ? AND items.active_status = 'active'";
 		$category = '%' . $category . '%';
 		return $this->db->query($query, $category)->result_array();
@@ -68,7 +70,15 @@ class Listing extends CI_Model {
 
 	public function display_item($num)
 	{
-		$query = "SELECT items.id, items.name, items.description, items.price, categories.name AS category, brands.name AS brand_name, users.email FROM items JOIN users ON items.seller_id = users.id JOIN categories ON categories.id = items.categories_id JOIN items_has_brands ON items_has_brands.items_id = items.id JOIN brands ON brands.id = items_has_brands.brands_id WHERE items.id = {$num}";
+		$query = "SELECT items.id, items.name, items.description, items.price, categories.name AS category, 
+			brands.name AS brand_name, users.email , images.link
+			FROM items 
+			JOIN users ON items.seller_id = users.id 
+			JOIN categories ON categories.id = items.categories_id 
+			JOIN items_has_brands ON items_has_brands.items_id = items.id 
+			JOIN brands ON brands.id = items_has_brands.brands_id 
+			JOIN images on items.image_id = images.id
+			WHERE items.id = {$num}";
 
 		return $this->db->query($query)->result_array();
 	}

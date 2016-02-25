@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   	<meta charset="UTF-8">
-	<title>Seller Page</title>
+	<title>Seller Dashboard</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
   <script>
@@ -19,26 +19,19 @@
   </script>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/assets/css/custom.css">
   <link rel="stylesheet" href="/assets/css/header.css">
-  <style type="text/css">
-    .container{
-      background: url("/assets/images/bike.png");
-      background-repeat:no-repeat;
-      -webkit-background-size:cover;
-      -moz-background-size:cover;
-      -o-background-size:cover;
-      background-size:cover;
-      background-position:center;
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/css/custom.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
 </head>
+
 <body>
   <div class="header">
     <?php $this->load->view('header'); ?>
   </div>
 
-  <div class="container">
+<div id="main_container">
+  <div id="main_subcontainer">
 	<div class="user_info">
   		<img src="<?=$user['link']?>" width="150px" height "280px"><br>
   		<?= $user['first_name'] ?>

@@ -15,7 +15,7 @@
 
 <div class="container-fluid bg-1 text-center" id="main_container">
 	<div class="login_subcontainer">
-
+	<h3>Not part of the family yet? You're one easy step away from being a 'cycle path'!</h3><br>
 	<div id="register">	
     <h3>Register Here!</h3>
     	<?php if($this->session->flashdata('registration_errors')[0]) : ?>

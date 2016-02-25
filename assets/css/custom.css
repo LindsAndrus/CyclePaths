@@ -73,3 +73,15 @@ a{
     border: 1px solid gray;
     padding: 30px 0 30px 100px;
 }
+
+/* SHOW */
+#main_subcontainer{
+    margin: auto;
+    width: 900px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: #F0F0F0;
+    -webkit-filter: opacity(75%);
+    -webkit-backdrop-filter:blur(10px); 
+    margin-top: 100px;
+}

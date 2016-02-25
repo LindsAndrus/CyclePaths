@@ -2,31 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Create a Listing</title>
-  <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/header.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Create a Listing</title>
+</head> 
 
-  <style type="text/css">
-    #create_container{
-      background: url("/assets/images/bike.png");
-      background-repeat:no-repeat;
-      -webkit-background-size:cover;
-      -moz-background-size:cover;
-      -o-background-size:cover;
-      background-size:cover;
-      background-position:center;
-    }
-  </style>
 
-</head>     
 <body>  
 <?php $this->load->view('header.php') ?>
 
-<div class="container" id="create_container">
+<div class="container" id="main_container">
   <!-- <div class="row">
     <div class="col-md-5"> -->
   <div id="search_inputs">
+
 	<h3>Create A Listing Here!</h3>
 
     <?php if($this->session->flashdata('errors')) : ?>
@@ -42,8 +32,38 @@
     <div>
       Name: <input type='text' name='name' class="form-control">
     </div>
-    <div>
-      Category: <select type='select' name='category' class="form-control">
+
+    <div id="create_category">
+      Part Category: <br>
+      <form role="form">
+        <label class="radio-inline">
+          <input type="radio" name="optradio">Wheels
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="optradio">Brakes
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="optradio">Shifters/Derailleurs
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="optradio">Handbars/Grips
+        </label><br>
+        <label class="radio-inline">
+          <input type="radio" name="optradio">Pedals/Cleats
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="optradio">Cranksets/Chainrings/Chainsets
+        </label><br>
+        <label class="radio-inline">
+          <input type="radio" name="optradio">Chains/Cassettes
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="optradio">Saddles/Seats/Seatposts
+        </label>
+      </form>
+    </div>
+
+     <!--  Category: <select type='select' name='category' class="form-control">
         <option value="wheels">Wheels</option>
         <option value="brakes">Brakes</option>
         <option value="shifters/derailleurs">Shifters/Derailleurs</option>
@@ -53,7 +73,7 @@
         <option value="chains/cassettes">Chains/Cassettes</option>
         <option value="saddles/seats/seatposts">Saddles/Seats/Seatposts</option>
       </select>      
-    </div>
+    </div> -->
    
     <div>
       Brand: <select type='select' name='brand' class="form-control">
@@ -83,7 +103,7 @@
       <input type="file" name="userfile"/>
     </div>
 
-    <input type='submit' value='Post' class="btn btn-primary">
+    <input type='submit' value='Post' class="btn btn-primary" id="create_submit">
     </input>
 
 	</form>

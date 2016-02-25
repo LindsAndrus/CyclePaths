@@ -12,10 +12,9 @@
 	
 </head>
 <body>
-
 <?php $this->load->view('header'); ?>
-
-<div class="profile_container" id="main_container">
+<div class="container-fluid bg-1 text-center" id="main_container">
+	
 	<div id="profile_edit">	
 	    <h3>Edit Here!</h3>
     	<?php if($this->session->flashdata('edit_errors')) : ?>
@@ -53,7 +52,6 @@
 			<!-- <input type="hidden" name="id" value="<?= $user['user_id']?>">
 			<br>
 			<input type="submit" value="Edit Account" class="btn btn-primary"> -->
-		
 	</div>
 </div>
 
