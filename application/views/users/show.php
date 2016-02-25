@@ -46,9 +46,7 @@
   		<?= $user['email'] ?><br>
       <a href="/users/edit/<?=$user['user_id']?>">Edit Profile Info</a>
       <div>
-        <form action="/create_item" method="post">
-          <input type="submit" value="Create New Listing">
-        </form>
+        <a href="/listings">Create New Listing</a>
       </div>
 
 	</div>
