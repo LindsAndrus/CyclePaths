@@ -7,7 +7,7 @@
     	<?php if($this->session->userdata('user_id')) : ?>
 			<li><a href="/logout">LOGOUT</a></li>
 	 	<?php else : ?>
-	 		<li><a href="/login">LOGIN/REGISTRATION</a></li>
+	 		<li><a href="/login">LOGIN AND REGISTRATION</a></li>
 	 	<?php endif ?>
 	 	<li><a href="/listings/create_item">CREATE LISTING</a></li>
 		<li><a href="/about">ABOUT</a></li>
