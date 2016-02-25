@@ -15,7 +15,7 @@
     <h2>Your Search Results!</h2>
     <h4>Your Search returned <?= count($results) ?> results!</h4>
 
-    <div class="search_results">
+    <div class="search">
       <table>
         <tr>
           <th>Image </th>
@@ -25,7 +25,7 @@
           <th>Price </th>
         </tr>
         <?php foreach ($results as $list_item) {?>
-        <tr>
+        <tr class="search_results">
             <td>
               <a href="/item_page/<?= $list_item['id'] ?>"><img src="<?=$list_item['link'] ?>" width="100" height="100"></a>
             </td>

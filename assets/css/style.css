@@ -176,9 +176,13 @@
 
 /* LISTINGS */
 #sub_container{
-	width: 900px;
 	margin: auto;
+	width: 70%;
 	padding-top: 100px;
+}
+.search_results{
+	border: 1px solid gray;
+	margin: 10px 0;
 }
 
 
