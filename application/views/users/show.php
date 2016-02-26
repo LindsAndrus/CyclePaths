@@ -59,7 +59,7 @@
                 <p><b>Item Name: </b><?=$listing['name']?><br> 
                 <b>Description: </b><?=$listing['description']?><br>
                 <b>Listed Price: </b><?=$listing['price']?></p>
-                <button type="button"><a href="/inactivate/<?= $listing['id'] ?>">REMOVE LISTING</a></button>
+                <button type="button" class="btn btn-danger"><a href="/inactivate/<?= $listing['id'] ?>">REMOVE LISTING</a></button>
               </div>
           <?php endforeach ?>
       </div>
