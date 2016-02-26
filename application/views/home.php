@@ -8,7 +8,7 @@
 	<title>Home</title>
 	<style type="text/css">
 	.searchcontainer{
-		background: url("assets/images/bike.png");
+		background: url("assets/images/bikeackground.jpg");
 		background-repeat:no-repeat;
 		-webkit-background-size:cover;
 		-moz-background-size:cover;
