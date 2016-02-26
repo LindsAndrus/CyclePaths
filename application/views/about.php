@@ -13,7 +13,7 @@
 	<div class="about_container" id="main_container">
 		<div class="about_container">
 			<div class="about_text">
-				<h2 id="about_header">About CyclePaths</h2>
+				<h2 id="about_header"><b>About CyclePaths</b></h2>
 				<p>On a cold and dreary winter Seattle day, four students came together with a mutual dream of creating the best bike-parts sales platform ever. The four 'Cyclepaths' thought a simple easy to use directory of used parts would help budget savy bikers find the parts to bring their hogs to life. </p>
 			</div>
 			

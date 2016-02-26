@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="/assets/css/header.css">
 	<link rel="stylesheet" href="/assets/css/style.css">
 
-  	<title>About Cycle Path</title>
+  	<title>Contact Us</title>
 </head>
 <body>
 	<?php $this->load->view('header') ?>

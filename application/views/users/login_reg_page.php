@@ -37,7 +37,7 @@
 				  	<input type="password" name="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
 				</div>
 				<div class="input-group">
-				  	<input type="password" name="password" class="form-control" placeholder="Confirm Password" aria-describedby="basic-addon1">
+				  	<input type="password" name="confirm_password" class="form-control" placeholder="Confirm Password" aria-describedby="basic-addon1">
 				</div>
 				<input type="submit" value="Create Account" class="btn btn-primary">
 				<!-- <h4>First Name</h4><input type="text" name="first_name">
