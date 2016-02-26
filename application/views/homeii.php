@@ -31,16 +31,10 @@
   <div class="container-fluid bg-1 text-center" id="main_container">
       <div class="row" id="row_1">
         <div class="col-md-3" id="wheel">
-<<<<<<< HEAD
-          <a href="search/wheels"><img src="/assets/images/categories/wheels.jpg" width="180px" height="180px";>
-          <button class="btn btn-default" type="button">
-            Wheels</button></a>
-=======
           <a href="search/wheels">
             <img src="/assets/images/categories/wheels.jpg" width="180px" height="180px";>
             <button class="btn btn-default" type="button">Wheels</button>
           </a>
->>>>>>> origin/master
         </div>
         <div class="col-sm-3" id="brakes">
           <a href="search/brakes">
