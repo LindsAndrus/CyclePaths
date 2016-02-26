@@ -32,7 +32,6 @@ class Listings extends CI_Controller {
 		} else {
 			show_404();
 		}
-
 	}
 
 	public function create_item() {
@@ -120,5 +119,13 @@ class Listings extends CI_Controller {
 		$results = $this->listing->display_item($num);
 
 		$this->load->view('item_page',array('ind_item' => $results));
+	}
+
+	public function inactivate($id)
+	{
+		$this->load->model('listing');
+		$this->listing->inactivate_listing($id);
+
+		redirect('/users/show/'.$this->session->userdata('user_id'));
 	}
 }

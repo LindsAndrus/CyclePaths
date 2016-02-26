@@ -55,10 +55,11 @@
       <div class="tab-content listing">
           <?php foreach($user['active_listings'] as $listing) : ?>
               <div class="tab-pane" id="<?=$listing['id']?>"> 
-                <img src="<?=$listing['link']?>" width="15%" height "15%"><br>
+                <a href="/item_page/<?= $listing['id'] ?>"><img src="<?=$listing['link']?>" width="15%" height "15%"></a><br>
                 <p><b>Item Name: </b><?=$listing['name']?><br> 
                 <b>Description: </b><?=$listing['description']?><br>
                 <b>Listed Price: </b><?=$listing['price']?></p>
+                <button type="button"><a href="/inactivate/<?= $listing['id'] ?>">REMOVE LISTING</a></button>
               </div>
           <?php endforeach ?>
       </div>
@@ -74,7 +75,7 @@
       <div class="tab-content listing">
         <?php foreach($user['inactive_listings'] as $listing) : ?>
             <div class="tab-pane" id="<?=$listing['id']?>"> 
-              <img src="<?=$listing['link']?>" width="15%" height "15%"><br>
+              <a href="/item_page/<?= $listing['id'] ?>"><img src="<?=$listing['link']?>" width="15%" height "15%"></a><br>
               <p><b>Item Name: </b><?=$listing['name']?><br>
               <b>Description: </b><?=$listing['description']?><br>
               <b>Listed Price: </b><?=$listing['price']?></p>

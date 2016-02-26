@@ -8,6 +8,7 @@ $route['listings'] = 'listings/build';
 $route['contact'] = 'listings/contact';
 $route['about'] = 'listings/about';
 $route['home'] = 'listings/index';
+$route['inactivate/(:num)'] = 'listings/inactivate/$1';
 $route['/users/show/(:num)'] = 'Users/show/$1';
 $route['/users/edit/(:num)'] = 'Users/edit/$1';
 $route['search/(:any)'] = 'Listings/search/$1'; 

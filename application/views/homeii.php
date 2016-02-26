@@ -28,9 +28,9 @@
   <div class="container-fluid bg-1 text-center" id="main_container">
       <div class="row" id="row_1">
         <div class="col-md-3" id="wheel">
-          <img src="/assets/images/categories/wheels.jpg" width="180px" height="180px";>
+          <a href="search/wheels"><img src="/assets/images/categories/wheels.jpg" width="180px" height="180px";>
           <button class="btn btn-default" type="button">
-            <a href="search/wheels">Wheels</a></button>
+            Wheels</button></a>
         </div>
         <div class="col-sm-3" id="brakes">
           <img src="/assets/images/categories/brakes.jpg" width="180px" height="180px";>

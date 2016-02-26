@@ -15,6 +15,12 @@ class Listing extends CI_Model {
 		return $this->db->query($query, $values)->result_array();
 	}
 
+	function inactivate_listing($id){
+		$query = "UPDATE items SET active_status='inactive' WHERE id={$id};";
+
+		$this->db->query($query);
+	}
+
 	public function search_results()
 	{
 		$query = "SELECT id, name, description FROM categories";

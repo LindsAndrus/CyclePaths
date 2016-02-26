@@ -58,6 +58,11 @@
     height: 50px;
 }
 
+.tab-content button{
+    position: relative;
+    top: -140px;
+    left: 350px;
+}
 .tab-pane img{
     position: relative;
     left: -60px;
