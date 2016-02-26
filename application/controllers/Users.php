@@ -50,16 +50,19 @@ class Users extends CI_Controller {
 	}
 
 	public function show($id){
-		$this->load->model('User');
-		$user = $this->User->get_user_by_id($id);
-		//get active and inactive listings
-		$this->load->model('Listing');
-		$active_listings = $this->Listing->get_active_listings_by_seller_id($id);
-		$inactive_listings = $this->Listing->get_inactive_listings_by_seller_id($id);
-		//add them to our data
-		$user += array('active_listings' => $active_listings, 'inactive_listings' => $inactive_listings);
-		$this->load->view('users/show', array('user' => $user));
-
+		if($id == $this->session->userdata('user_id')) {
+			$this->load->model('User');
+			$user = $this->User->get_user_by_id($id);
+			//get active and inactive listings
+			$this->load->model('Listing');
+			$active_listings = $this->Listing->get_active_listings_by_seller_id($id);
+			$inactive_listings = $this->Listing->get_inactive_listings_by_seller_id($id);
+			//add them to our data
+			$user += array('active_listings' => $active_listings, 'inactive_listings' => $inactive_listings);
+			$this->load->view('users/show', array('user' => $user));
+		} else {
+			show_404();
+		}
 	}
 	public function edit($id){
 		if($id != $this->session->userdata('user_id')) {
@@ -153,7 +156,11 @@ class Users extends CI_Controller {
 	}
 
 	public function login_reg_page(){
-		$this->load->view('users/login_reg_page');
+		if($this->session->userdata('is_logged_in')) {
+			redirect('/users/show/'.$this->session->userdata('user_id'));
+		} else {
+			$this->load->view('users/login_reg_page');
+		}
 	}
 
 	public function users_listings($id)

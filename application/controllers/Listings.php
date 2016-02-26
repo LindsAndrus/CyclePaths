@@ -35,31 +35,34 @@ class Listings extends CI_Controller {
 
 	}
 
-	public function create_item()
-	{
-		$this->load->model('listing');
-		$data = $this->input->post();
-		//validate item data
-		if(!$this->listing->validate($data)) {
-			//validation failed
-			$errors = array(validation_errors());
-			$this->session->set_flashdata('errors', $errors);
-			redirect("/listings/build");
-		}
-		//validate image data
-		$item_id = $this->listing->create_item(
+	public function create_item() {
+		if($this->session->userdata('is_logged_in')) {
+			$this->load->model('listing');
+			$data = $this->input->post();
+			//validate item data
+			if(!$this->listing->validate($data)) {
+				//validation failed
+				$errors = array(validation_errors());
+				$this->session->set_flashdata('errors', $errors);
+				redirect("/listings/build");
+			}
+			//validate image data
+			$item_id = $this->listing->create_item(
 
-			$this->input->post('name'),
-			$this->input->post('category'),
-			$this->input->post('brand'),
-			$this->input->post('description'),
-			$this->input->post('price')
-		);
-		$this->do_upload($item_id);
-		redirect('/');
+				$this->input->post('name'),
+				$this->input->post('category'),
+				$this->input->post('brand'),
+				$this->input->post('description'),
+				$this->input->post('price')
+			);
+			$this->do_upload($item_id);
+			redirect('/');
+		} else {
+			show_404();
+		}
 	}
 
-	function do_upload($item_id) {
+	private function do_upload($item_id) {
 		$this->load->model('Listing');
 		//create the users folder if it doesn't exist
 		$path = './assets/images/items/'.$item_id."/";
@@ -73,12 +76,12 @@ class Listings extends CI_Controller {
 		$config['overwrite'] = true;
 		$this->load->library('upload', $config);
 		if (!$this->upload->do_upload()) {
-			//destroy the item we made
-			$this->listing->destroy_listing($item_id);
-			//destroy the folder we made
-			rmdir($path);
 			//add errors and redirect
 			if ("You did not select a file to upload." != $this->upload->display_errors("","")) {
+				//destroy the item we made
+				$this->listing->destroy_listing($item_id);
+				//destroy the folder we made
+				rmdir($path);
 				$this->session->set_flashdata("errors", array("You can only upload a jpeg, jpg, gif, or png file"));
 				redirect("/listings/build/");
 
@@ -86,6 +89,7 @@ class Listings extends CI_Controller {
 			else {
 				// here they did not provide a file upload so we dont care
 				//defaults to 2, we dont need to do anything
+
 			}
 		} else {
 			//create the image in the db:
@@ -99,7 +103,7 @@ class Listings extends CI_Controller {
 			//connect image to item
 			$data = array('image_id' => $image_id, 'item_id' => $item_id);
 			$this->Listing->add_image_to_item($data);
-		//end function, continue
+			//end function, continue
 		}
 	}
 

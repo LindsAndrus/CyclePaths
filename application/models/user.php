@@ -64,9 +64,9 @@ class User extends CI_Model {
 
 	public function active_per_user($id)
 	{
-		$query = "SELECT * FROM items WHERE seller_id = {$id} AND active_status = 'active'";
-
-		return $this->db->query($query)->result_array();
+		$query = "SELECT * FROM items WHERE seller_id = ? AND active_status = 'active'";
+		$values = array($id);
+		return $this->db->query($query, $values)->result_array();
 	}
 
 	public function inactive_per_user()

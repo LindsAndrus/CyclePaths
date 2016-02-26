@@ -34,32 +34,32 @@
     </div>
 
     <div id="create_category">
-      Category: <select type='select' name='category' class="form-control">
-        <option value="wheels">Wheels</option>
-        <option value="brakes">Brakes</option>
-        <option value="shifters/derailleurs">Shifters/Derailleurs</option>
-        <option value="handbars/grips">Handbars/Grips</option>
-        <option value="pedals/cleats">Pedals/Cleats</option>
-        <option value="cranksets/chainrings/chainsets">Cranksets/Chainrings/Chainsets</option>
-        <option value="chains/cassettes">Chains/Cassettes</option>
-        <option value="saddles/seats/seatposts">Saddles/Seats/Seatposts</option>
+      Category: <select name='category' class="form-control">
+        <option value="Wheels">Wheels</option>
+        <option value="Brakes">Brakes</option>
+        <option value="Shifters/Derailleurs">Shifters/Derailleurs</option>
+        <option value="Handbars/Grips">Handbars/Grips</option>
+        <option value="Pedals/Cleats">Pedals/Cleats</option>
+        <option value="Cranksets/Chainrings/Chainsets">Cranksets/Chainrings/Chainsets</option>
+        <option value="Chains/Cassettes">Chains/Cassettes</option>
+        <option value="Saddles/Seats/Seatposts">Saddles/Seats/Seatposts</option>
       </select>      
     </div>
    
     <div>
-      Brand: <select type='select' name='brand' class="form-control">
-        <option value="cannondale">Cannondale</option>
-        <option value="giant">Giant</option>
-        <option value="gt">GT</option>
-        <option value="kona">Kona</option>
-        <option value="marin">Marin</option>
-        <option value="merida">Merida</option>
-        <option value="santa cruz bicycles">Santa Cruz Bicycles</option>
-        <option value="scott">Scott</option>
-        <option value="specialized">Specialized</option>
-        <option value="trek">Trek</option>
-        <option value="other">Other</option>
-      </select>       
+      Brand: <select name='brand' class="form-control">
+        <option value="Cannondale">Cannondale</option>
+        <option value="GIANT">Giant</option>
+        <option value="GT">GT</option>
+        <option value="Kona">Kona</option>
+        <option value="Marin">Marin</option>
+        <option value="Merida">Merida</option>
+        <option value="Santa Cruz Bicycles">Santa Cruz Bicycles</option>
+        <option value="Scott">Scott</option>
+        <option value="Specialized">Specialized</option>
+        <option value="Trek">Trek</option>
+        <option value="Other">Other</option>
+      </select>
     </div>
 
     <div>
@@ -75,7 +75,6 @@
     </div>
 
     <input type='submit' value='Post' class="btn btn-primary" id="create_submit">
-    </input>
 
 	</form>
   </div>
