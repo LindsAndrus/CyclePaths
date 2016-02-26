@@ -37,10 +37,12 @@
   		<?= $user['first_name'] ?>
   		<?= $user['last_name'] ?>
   		<?= $user['email'] ?><br>
-      <a href="/users/edit/<?=$user['user_id']?>">Edit Profile Info</a>
-      <div>
-        <a href="/listings">Create New Listing</a>
-      </div>
+
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-info"><a href="/users/edit/<?=$user['user_id']?>">Edit Profile Info</a></button>
+     
+        <button type="button" class="btn btn-success"><a href="/listings">Create New Listing</a></button>
+    </div>
 
 	</div>
   <div class="currentsales">

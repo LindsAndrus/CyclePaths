@@ -13,10 +13,12 @@
   <div id="main_container">
     <div id="sub_container">
     <h2>Your Search Results!</h2>
-    <h4>Your Search returned <?= count($results) ?> results!</h4>
 
-    <div class="search_results">
-      <table>
+    <div class="panel panel-default">
+     <div class="panel-heading"><h4>Your Search returned <?= count($results) ?> results!</h4></div>
+
+   <div class="search_results">
+      <table class="table">
         <tr>
           <th>Image </th>
           <th>Category Name </th>
