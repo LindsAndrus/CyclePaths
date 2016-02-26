@@ -53,7 +53,7 @@ class User extends CI_Model {
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('first_name', 'First Name', 'trim|required|min_length[3]');
        $this->form_validation->set_rules('last_name', 'Last Name', 'trim|required|min_length[3]');
-		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[users.email]');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]');
 		if($this->form_validation->run()){
 			return true;
