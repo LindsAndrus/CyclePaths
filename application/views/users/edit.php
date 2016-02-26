@@ -31,10 +31,10 @@
 				<input type="text" name="first_name" class="form-control" value="<?=$user['first_name']?>" aria-describedby="basic-addon1">
 			</div>
 			<div class="input-group">
-			  	<input type="text" name="first_name" class="form-control" value="<?=$user['last_name']?>" aria-describedby="basic-addon1">
+			  	<input type="text" name="last_name" class="form-control" value="<?=$user['last_name']?>" aria-describedby="basic-addon1">
 			</div>
 			<div class="input-group">
-			  	<input type="text" name="first_name" class="form-control" value="<?=$user['email']?>" aria-describedby="basic-addon1">
+			  	<input type="text" name="email" class="form-control" value="<?=$user['email']?>" aria-describedby="basic-addon1">
 			</div>
 			<div class="input-group">
 			  	<input type="password" name="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">

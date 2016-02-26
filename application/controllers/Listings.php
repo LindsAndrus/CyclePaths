@@ -56,7 +56,7 @@ class Listings extends CI_Controller {
 				$this->input->post('price')
 			);
 			$this->do_upload($item_id);
-			redirect('/');
+			redirect('/users/show/' . $this->session->userdata('user_id'));
 		} else {
 			show_404();
 		}

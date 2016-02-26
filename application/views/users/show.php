@@ -55,6 +55,9 @@
       <div class="tab-content listing">
           <?php foreach($user['active_listings'] as $listing) : ?>
               <div class="tab-pane" id="<?=$listing['id']?>"> 
+                <!-- <a href="/"> -->
+                 <!-- create link to item's page -->
+                 <!-- add deactivate button -->
                 <img src="<?=$listing['link']?>" width="15%" height "15%"><br>
                 <p><b>Item Name: </b><?=$listing['name']?><br> 
                 <b>Description: </b><?=$listing['description']?><br>
