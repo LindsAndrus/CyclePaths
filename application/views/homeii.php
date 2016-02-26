@@ -24,74 +24,59 @@
 
 <body>
 	<?php $this->load->view('header') ?>
-	
+
   <div class="container-fluid bg-1 text-center" id="main_container">
-    <div class="row" id="row_1">
+      <div class="row" id="row_1">
+        <div class="col-md-3" id="wheel">
+          <img src="/assets/images/categories/wheels.jpg" width="180px" height="180px";>
+          <button class="btn btn-default" type="button">
+            <a href="search/wheels">Wheels</a></button>
+        </div>
+        <div class="col-sm-3" id="brakes">
+          <img src="/assets/images/categories/brakes.jpg" width="180px" height="180px";>
+          <button class="btn btn-default" type="button">
+            <a href="search/brakes">Brakes</a></button>
+        </div>
 
-      <div class="dropdown col-md-3" id="wheel_dropdown">
-        <img src="/assets/images/categories/wheels.jpg" width="180px" height="180px";>
-        <button class="btn btn-default" type="button">
-          <a href="search/wheels">Wheels</a>
-        </button>
-      </div>
-     
+        <div class="col-sm-3" id="chains">
+          <img src="/assets/images/categories/chains.jpg" width="180px" height="180px";>
+          <button class="btn btn-default" type="button">
+            <a href="search/derailleurs">Shifters/Derailleurs</a></button>
+        </div>
 
-
-      <div class="dropdown col-sm-3" id="brakes_dropdown">
-        <img src="/assets/images/categories/brakes.jpg" width="180px" height="180px";>
-        <button class="btn btn-default" type="button">
-          <a href="search/brakes">Brakes</a>
-        </button>
-      </div>
-
-      <div class="dropdown col-sm-3" id="chains_dropdown">
-        <img src="/assets/images/categories/chains.jpg" width="180px" height="180px";>
-        <button class="btn btn-default" type="button">
-          <a href="search/derailleurs">Shifters/Derailleurs</a>
-        </button>
-      </div>
-
-      <div class="dropdown col-sm-3" id="crankset_dropdown">
-        <img src="/assets/images/categories/crankset.jpg" width="180px" height="180px";>
-        <button class="btn btn-default" type="button">
-          <a href="search/grips">Handlebars/Grips</a>
-        </button>
-      </div>
+        <div class="col-sm-3" id="crankset">
+          <img src="/assets/images/categories/crankset.jpg" width="180px" height="180px";>
+          <button class="btn btn-default" type="button">
+            <a href="search/grips">Handlebars/Grips</a></button>
+        </div>
     </div>
 
     <div class="row" id="row_2">
+        <div class="col-sm-3" id="derailleur">
+          <img src="/assets/images/categories/derailleur.jpg" width="180px" height="180px";>
+          <button class="btn btn-default" type="button">
+            <a href="search/pedals">Pedals/Cleats</a></button>
+        </div>
 
-      <div class="dropdown col-sm-3" id="derailleur_dropdown">
-        <img src="/assets/images/categories/derailleur.jpg" width="180px" height="180px";>
-        <button class="btn btn-default" type="button">
-          <a href="search/pedals">Pedals/Cleats</a>
-        </button>
-      </div>
+        <div class=" col-sm-3" id="handlebar">
+          <img src="/assets/images/categories/handlebar.jpg" width="180px" height="180px";>
+         <button class="btn btn-default" type="button">
+            <a href="search/crankset">Cranksets/Chainsets</a></button>
+        </div>
 
-      <div class="dropdown col-sm-3" id="handlebar_dropdown">
-        <img src="/assets/images/categories/handlebar.jpg" width="180px" height="180px";>
-       <button class="btn btn-default" type="button">
-          <a href="search/crankset">Cranksets/Chainsets</a>
-        </button>
-      </div>
-
-      <div class="dropdown col-sm-3" id="pedals_dropdown">
-        <img src="/assets/images/categories/pedals.jpg" width="180px" height="180px";>
-        <button class="btn btn-default" type="button">
-          <a href="search/chains">Chains/Cassettes</a>
-        </button>
-      </div>
-
-        
-      <div class="dropdown col-md-3" id="saddle_dropdown">
-        <img src="/assets/images/categories/saddle.jpg" width="180px" height="180px";>
-        <button class="btn btn-default" type="button">
-          <a href="search/saddles">Saddles/Seats/Seatposts</a>
-        </button>
-      </div>
-      </div>
-
+        <div class=" col-sm-3" id="pedals">
+          <img src="/assets/images/categories/pedals.jpg" width="180px" height="180px";>
+          <button class="btn btn-default" type="button">
+            <a href="search/chains">Chains/Cassettes</a></button>
+        </div>
+        <div class=" col-md-3" id="saddle">
+          <img src="/assets/images/categories/saddle.jpg" width="180px" height="180px";>
+          <button class="btn btn-default" type="button">
+            <a href="search/saddles">Saddles/Seats/Seatposts</a></button>
+        </div>
     </div>
+
+  </div>
 
 
     <div class="content" id="home_content">
