@@ -39,13 +39,13 @@
         </div>
 
         <div class="col-sm-3" id="chains">
-          <img src="/assets/images/categories/chains.jpg" width="180px" height="180px";>
+          <img src="/assets/images/categories/derailleur.jpg" width="180px" height="180px";>
           <button class="btn btn-default" type="button">
             <a href="search/derailleurs">Shifters/Derailleurs</a></button>
         </div>
 
         <div class="col-sm-3" id="crankset">
-          <img src="/assets/images/categories/crankset.jpg" width="180px" height="180px";>
+          <img src="/assets/images/categories/handlebar.jpg" width="180px" height="180px";>
           <button class="btn btn-default" type="button">
             <a href="search/grips">Handlebars/Grips</a></button>
         </div>
@@ -53,19 +53,19 @@
 
     <div class="row" id="row_2">
         <div class="col-sm-3" id="derailleur">
-          <img src="/assets/images/categories/derailleur.jpg" width="180px" height="180px";>
+          <img src="/assets/images/categories/pedals.jpg" width="180px" height="180px";>
           <button class="btn btn-default" type="button">
             <a href="search/pedals">Pedals/Cleats</a></button>
         </div>
 
         <div class=" col-sm-3" id="handlebar">
-          <img src="/assets/images/categories/handlebar.jpg" width="180px" height="180px";>
+          <img src="/assets/images/categories/crankset.jpg" width="180px" height="180px";>
          <button class="btn btn-default" type="button">
             <a href="search/crankset">Cranksets/Chainsets</a></button>
         </div>
 
         <div class=" col-sm-3" id="pedals">
-          <img src="/assets/images/categories/pedals.jpg" width="180px" height="180px";>
+          <img src="/assets/images/categories/chains.jpg" width="180px" height="180px";>
           <button class="btn btn-default" type="button">
             <a href="search/chains">Chains/Cassettes</a></button>
         </div>
